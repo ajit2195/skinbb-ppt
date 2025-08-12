@@ -28,6 +28,9 @@ slides.forEach((slide) => {
 function animateNumbers() {
   const counters = document.querySelectorAll(".number-counter");
   counters.forEach((counter) => {
+    if (counter.dataset.animated) return;
+    counter.dataset.animated = "true";
+
     const target = counter.innerText;
     const isPercentage = target.includes("%");
     const isCurrency = target.includes("₹") || target.includes("Cr");
@@ -44,6 +47,7 @@ function animateNumbers() {
         }
 
         let displayValue = Math.floor(current);
+
         if (isCurrency && target.includes("Cr")) {
           counter.innerText = "₹" + displayValue + "Cr";
         } else if (isCurrency) {
@@ -70,105 +74,53 @@ const observerNumbers = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         animateNumbers();
+        observerNumbers.disconnect();
       }
     });
   },
-  { threshold: 0.5 }
+  { threshold: 0.2 }
 );
 
-document.querySelectorAll(".stat-card").forEach((card) => {
-  observerNumbers.observe(card);
-});
+document
+  .querySelectorAll(".number-counter")
+  .forEach((el) => observerNumbers.observe(el));
 
-// Charts
-window.addEventListener("load", () => {
-  // Revenue Chart
-  const revenueCtx = document.getElementById("revenueChart");
-  if (revenueCtx) {
-    new Chart(revenueCtx, {
-      type: "line",
-      data: {
-        labels: ["Year 1", "Year 2", "Year 3", "Year 4", "Year 5"],
-        datasets: [
-          {
-            label: "Revenue (Cr ₹)",
-            data: [46, 133, 5135, 11543, 20154],
-            borderColor: "rgb(102, 126, 234)",
-            backgroundColor: "rgba(102, 126, 234, 0.1)",
-            tension: 0.4,
-            fill: true,
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: {
-              font: { family: "Lato" },
-            },
-          },
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            ticks: {
-              font: { family: "Lato" },
-            },
-          },
-          x: {
-            ticks: {
-              font: { family: "Lato" },
-            },
-          },
-        },
-      },
-    });
-  }
+// slide-2
 
-  // Investment Chart
-  const investmentCtx = document.getElementById("investmentChart");
-  if (investmentCtx) {
-    new Chart(investmentCtx, {
-      type: "doughnut",
-      data: {
-        labels: [
-          "Technology (20%)",
-          "Team Building (20%)",
-          "Market Expansion (50%)",
-          "Operations (10%)",
-        ],
-        datasets: [
-          {
-            data: [100, 50, 75, 25],
-            backgroundColor: [
-              "rgba(102, 126, 234, 0.8)",
-              "rgba(59, 130, 246, 0.8)",
-              "rgba(34, 197, 94, 0.8)",
-              "rgba(249, 115, 22, 0.8)",
-            ],
-            borderWidth: 3,
-            borderColor: "#fff",
-          },
-        ],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            position: "bottom",
-            labels: {
-              font: {
-                family: "Lato",
-                size: 14,
-              },
-              padding: 20,
-            },
-          },
-        },
-      },
-    });
-  }
-});
+// function animateSlide() {
+//   const slide = document.querySelector("#slide-2");
+//   if (!slide) return;
+//   const main_content = slide.querySelector(".main-content");
+//   const sub_content = slide.querySelector(".sub-content");
+
+//   setTimeout(() => {
+//     sub_content.style.opacity = 1;
+//     main_content.style.display = 0;
+//   }, 1000);
+//   sub_content.style;
+//   console.log("🚀 ~ animateSlide ~ main_content:", {
+//     main_content,
+//     sub_content,
+//   });
+// }
+// const slide2 = new IntersectionObserver(
+//   (entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         animateSlide();
+//         slide2.disconnect();
+//       }
+//     });
+//   },
+//   { threshold: 0.5 }
+// );
+
+// slide2.observe(document.querySelector("#slide-2 .main-content"));
+
+// document.addEventListener("aos:in:slide-2-content", ({ detail }) => {
+//   console.log("animated in", detail);
+// });
+
+// document.querySelectorAll(".stat-card").forEach((card) => {
+//   observerNumbers.observe(card);
+// });
