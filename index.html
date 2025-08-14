@@ -231,78 +231,130 @@
           opacity: 0;
         }
       }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          scale: 0.5;
+        }
+        to {
+          opacity: 1;
+          scale: 1;
+        }
+      }
+
+      html {
+        /* scroll-snap-type: y proximity; /* or y mandatory */
+        /* scroll-behavior: smooth;  */
+      }
+
+      body {
+        /* margin: 0; */
+      }
+      .home-page {
+        /* scroll-snap-type: y mandatory;
+        position: relative;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        height: 100dvh;
+        -webkit-overflow-scrolling: touch; */
+      }
+
+      .home-section {
+        /* flex: 0 0 100%; */
+        /* scroll-snap-align: start; */
+        /* scroll-snap-stop: normal; */
+        /* min-height: 100vh; */
+      }
+      /* min-height: 100dvh; */
+      /* position: sticky;
+      top: 0;
+      background-color: white; */
+      /* animation: appear linear;
+      animation-timeline:view();
+      animation-range: entry 0% cover 40%; */
     </style>
   </head>
-  <body class="text-gray-800 text-lg overflow-x-hidden">
+  <body class="home-page text-foreground overflow-x-hidden">
     <div class="progress-bar" id="progress"></div>
 
     <!-- Slide 1: Title Slide -->
-    <div class="flex items-center justify-center relative">
-      <!-- <img
+    <!-- <div class=" flex items-center justify-center relative"> -->
+    <!-- <img
         class="absolute hidden lg:block w-full inset-0 top-90"
         src="image-1.avif"
         alt=""
       /> -->
 
-      <div
-        class="container min-h-screen md:min-h-auto flex justify-center items-center overflow-hidden w-full max-w-4xl mx-auto px-6 text-center z-10 pt-15 md:pt-30 pb-10 md:pb-20"
-      >
-        <div class="ssr-variant">
+    <div
+      class="home-section relative container min-h-[100dvh] flex justify-center items-center overflow-hidden w-full max-w-4xl mx-auto px-6 text-center z-10 py-10"
+    >
+      <div class="ssr-variant">
+        <div
+          class="flex-none mix-blend-darken opacity-5 absolute inset-0"
+          data-framer-name="Texture"
+          name="Texture"
+        >
           <div
-            class="flex-none mix-blend-darken opacity-5 absolute inset-0"
-            data-framer-name="Texture"
-            name="Texture"
-          >
-            <div
-              data-framer-background-image-wrapper="true"
-              style="
-                position: absolute;
-                border-radius: inherit;
-                inset: 0px;
-                background-repeat: repeat;
-                background-position: left top;
-                background-size: 52.8px;
-                background-image: url('https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg');
-                border: 0px;
-              "
-            ></div>
-          </div>
+            data-framer-background-image-wrapper="true"
+            style="
+              position: absolute;
+              border-radius: inherit;
+              inset: 0px;
+              background-repeat: repeat;
+              background-position: left top;
+              background-size: 52.8px;
+              background-image: url('https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg');
+              border: 0px;
+            "
+          ></div>
         </div>
+      </div>
 
-        <div class="space-y-4 md:space-y-7">
-          <div class="font-medium space-y-3">
-            <img
-              class="w-40 md:w-60 mx-auto"
-              src="./logodarksq.png"
-              alt="logo"
-              data-aos="fade-down"
-            />
-            <!-- <h1
-              class="text-4xl sm:text-5xl md:text-7xl text-primary font-bold"
-              data-aos="fade-right"
+      <div class="space-y-4 md:space-y-7">
+        <div class="font-medium space-y-12 md:space-y-3">
+          <img
+            class="w-60 md:w-60 mx-auto"
+            src="./logodarksq.png"
+            alt="logo"
+            data-aos="fade-up"
+          />
+          <!-- <h1
+              class="text-5xl md:text-7xl text-primary font-bold"
+              data-aos="fade-up"
             >
               Skin Beyond Borders
             </h1> -->
-            <h1
-              class="text-3xl md:text-5xl mb-15 md:mb-20"
-              data-aos="fade-left"
-            >
-              The Skincare Metaverse
-            </h1>
-          </div>
-          <div class="text-lg md:text-2xl font-medium" data-aos="fade-right">
-            Leading the Future of the $180B Global Skincare Industry
-          </div>
-          <div class="text-lg" data-aos="fade-up">
-            Series A Investment Deck | 2025
-          </div>
-
-          <!-- <button class="btn mx-auto w-auto md:mt-10" data-aos="fade-up">
-            Book a call demo
-          </button> -->
+          <h1
+            class="text-3xl md:text-5xl mb-12 md:mb-8"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            "The Skincare Metaverse"
+          </h1>
+        </div>
+        <div
+          class="text-xl md:text-2xl font-medium"
+          data-aos="fade-up"
+          data-aos-delay="150"
+        >
+          Shaping The Future Of The $180B Global Skincare Industry
         </div>
 
-        <!-- <div class="content relative mt-15" data-aos="fade-up">
+        <!-- <button class="btn mx-auto w-auto md:mt-10" data-aos="fade-up">
+            Book a call demo
+          </button> -->
+      </div>
+
+      <div
+        class="text-lg absolute bottom-10"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        data-aos-offset="-100"
+      >
+        Series A Investment Deck | 2025
+      </div>
+      <!-- <div class="content relative mt-15" data-aos="fade-up">
           <figure
             class="md:aspect-[2.6666666666666665_/_1] flex-none h-[var(--framer-aspect-ratio-supported,432px)] overflow-hidden relative select-none w-full will-change-[var(--framer-will-change-override,transform)] rounded-2xl max-h-90"
             style="will-change: transform; opacity: 1; transform: none"
@@ -316,132 +368,140 @@
             />
           </figure>
         </div> -->
-      </div>
     </div>
+    <!-- </div> -->
 
     <!-- Slide 2: Imagine a World Where -->
 
-    <div class="py-10 md:py-20">
+    <div class="home-section py-10 md:py-20">
       <div
         id="slide-2"
         class="container overflow-hidden max-w-6xl text-center mx-auto px-6"
       >
-        <h2
-          class="sub-heading main-content pb-4"
-          data-aos="fade-up"
-          data-aos-id="slide-2-content"
+        <div
+          class="[&_div]:min-h-[50dvh] [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:flex-col"
         >
-          Imagine a World Where...
-        </h2>
-
-        <div class="sub-content my-20" data-aos="fade-up" data-aos-offset="350">
-          <h2 class="sub-heading pb-4">Every skincare decision is</h2>
-          <h2 class="sub-heading pb-4">Informed,</h2>
-          <h2 class="sub-heading pb-4">Hyper-personalised &</h2>
-          <h2 class="sub-heading pb-4">Connected......</h2>
-        </div>
-
-        <div class="sub-content" data-aos="fade-up" data-aos-offset="350">
-          <h2 class="sub-heading pb-4">We're building</h2>
-          <h2 class="sub-heading pb-4">The Skincare Metaverse</h2>
-          <h2 class="sub-heading pb-4">A Unified Digital Ecosystems</h2>
-          <h2 class="sub-heading pb-4 leading-15">
-            Connecting All Industry Stakeholders
-          </h2>
-          <!-- <p
-            class="text-muted-foreground max-w-4xl mx-auto md:mt-4"
-            data-aos="fade-up"
-            data-aos-delay="800"
-          >
-            We're building the Skincare Metaverse - a unified digital ecosystem
-            where:
-          </p> -->
+          <div>
+            <h2
+              class="sub-heading main-content pb-4"
+              data-aos="fade-up"
+              data-aos-id="slide-2-content"
+            >
+              Imagine a World Where...
+            </h2>
+          </div>
 
           <div
-            class="mt-10 md:mt-15 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
+            class="sub-content my-20"
             data-aos="fade-up"
             data-aos-offset="350"
           >
-            <div class="feature-card hover-scale stat-card">
-              <div class="text-4xl font-black text-primary mb-4 number-counter">
-                1000000 Mn+
-              </div>
-              <h4 class="text-xl font-semibold mb-1">
-                Consumers Decode Products & <br class="hidden md:block"/> Get Expert Guidance in Real-Time
-              </h4>
-              <div class="text-sm text-muted-foreground mt-2">
-                IBISWorld, 2024
-              </div>
-            </div>
+            <h2 class="sub-heading pb-4">Every skincare decision is</h2>
+            <h2 class="sub-heading pb-4">Informed,</h2>
+            <h2 class="sub-heading pb-4">Hyper-personalised &</h2>
+            <h2 class="sub-heading pb-4">Connected......</h2>
+          </div>
 
-            <div class="feature-card hover-scale stat-card">
-              <div class="text-4xl font-black text-primary mb-4 number-counter">
-                15K+
-              </div>
-              <h4 class="text-xl font-semibold mb-1">
-                Brands Access Market intelligence & <br class="hidden md:block"/>Direct Consumer
-                relationships
-              </h4>
-              <!-- <p class="text-muted-foreground">Market Intelligence</p> -->
-              <div class="text-sm text-muted-foreground mt-2">
-                L'Oréal/ILDS, 2024
-              </div>
+          <div class="sub-content" data-aos="fade-up" data-aos-offset="350">
+            <h2 class="sub-heading pb-4">We're building</h2>
+            <h2 class="sub-heading pb-4">The Skincare Metaverse</h2>
+            <h2 class="sub-heading pb-4">A Unified Digital Ecosystems</h2>
+            <h2 class="sub-heading pb-4 leading-15">
+              Connecting All Industry Stakeholders
+            </h2>
+          </div>
+        </div>
+        <div
+          class="mt-10 md:mt-15 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
+          data-aos="fade-up"
+          data-aos-offset="350"
+        >
+          <div class="feature-card hover-scale stat-card">
+            <div class="text-4xl font-black text-primary mb-4 number-counter">
+              1.1B+
             </div>
+            <h4 class="text-xl font-semibold mb-1">
+              Consumers Decode Products & <br class="hidden md:block" />
+              Get Expert Guidance
+            </h4>
+            <div class="text-sm text-muted-foreground mt-2">Statista, 2025</div>
+          </div>
 
-            <div class="feature-card hover-scale stat-card">
-              <div class="text-4xl font-black text-primary mb-4 number-counter">
-                215K+
-              </div>
-              <h4 class="text-xl font-semibold mb-1">
-                Dermatologists Expand Their <br class="hidden md:block"/> Footprints Digitally
-              </h4>
-              <!-- <p class="text-muted-foreground">Their Footprints Digitally</p> -->
-              <div class="text-sm text-muted-foreground mt-2">
-                Statista, 2025
-              </div>
+          <div class="feature-card hover-scale stat-card">
+            <div class="text-4xl font-black text-primary mb-4 number-counter">
+              15K+
             </div>
+            <h4 class="text-xl font-semibold mb-1">
+              Brands Access Real time Market intelligence
+            </h4>
+            <!-- <p class="text-muted-foreground">Market Intelligence</p> -->
+            <div class="text-sm text-muted-foreground mt-2">IBISWorld</div>
+          </div>
 
-            <div class="feature-card hover-scale stat-card">
-              <div class="text-4xl font-black text-primary mb-4">5k+</div>
-              <h4 class="text-xl font-semibold mb-1">
-                Suppliers Connect Directly <br class="hidden md:block"/> With Trends And Innovations
-              </h4>
-              <!-- <p class="text-muted-foreground">Directly With Innovation</p> -->
-              <div class="text-sm text-muted-foreground mt-2">
-                Internal Data
-              </div>
+          <div class="feature-card hover-scale stat-card">
+            <div class="text-4xl font-black text-primary mb-4 number-counter">
+              215K+
+            </div>
+            <h4 class="text-xl font-semibold mb-1">
+              Dermatologists Expand Their Expand Their practice Digitally
+            </h4>
+            <!-- <p class="text-muted-foreground">Their Footprints Digitally</p> -->
+            <div class="text-sm text-muted-foreground mt-2">
+              L'Oréal/ILDS, 2024
             </div>
           </div>
 
-          <div class="text-center mt-10">
-            <h3 class="text-lg md:text-2xl font-bold typewriter">
-              One platform. Every stakeholder. Infinite connections.
-            </h3>
+          <div class="feature-card hover-scale stat-card">
+            <div class="text-4xl font-black text-primary mb-4">20k+</div>
+            <h4 class="text-xl font-semibold mb-1">
+              Suppliers Connect Directly With Innovation
+            </h4>
+            <!-- <p class="text-muted-foreground">Directly With Innovation</p> -->
+            <div class="text-sm text-muted-foreground mt-2">Internal Data</div>
           </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <h3 class="text-lg md:text-2xl font-bold">
+            We're building a
+            <span class="text-primary">Skincare Metaverse - "SKINBB"</span>
+          </h3>
+        </div>
+        <div class="text-center mt-10">
+          <h3 class="text-lg md:text-2xl font-bold typewriter">
+            One platform. Every stakeholder. Infinite connections.
+          </h3>
         </div>
       </div>
     </div>
 
     <!-- Slide 3: The $86B Problem -->
-    <div class="pt-10 md:pt-20 bg-red-50">
-      <div class="container overflow-hidden max-w-6xl mx-auto px-6">
-        <h2 class="sub-heading mb-4" data-aos="fade-right">The $86B Problem</h2>
-        <p
-          class="text-center text-muted-foreground mb-8 md:mb-12"
-          data-aos="fade-left"
+    <div class="home-section pt-10 md:pt-20 bg-red-50">
+      <div class="container overflow-hidden max-w-8xl mx-auto px-6 text-center">
+        <h2 class="sub-heading" data-aos="fade-up">The $86B Problem</h2>
+        <div
+          class="text-xs font-normal text-muted-foreground mx-auto text-center"
+          data-aos="fade-up"
         >
-          Atelier-Accenture Report, The Skincare Industry is Systematically
-          Disconnected
+          Atelier-Accenture Report
+        </div>
+        <p
+          class="text-xl text-center text-muted-foreground mt-4 mb-8 md:mb-12"
+          data-aos="fade-up"
+        >
+          The Skincare Industry is Systematically Disconnected
         </p>
         <div
-          class="grid md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-8 pb-10 md:pb-20"
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-4 pb-10 md:pb-20"
         >
           <div class="feature-card bg-white hover-scale" data-aos="fade-up">
             <div class="text-center mb-6">
-              <i class="fas fa-users text-4xl text-primary mb-4"></i>
-              <h4 class="text-xl font-bold text-gray-800">For Consumers</h4>
+              <i class="fas fa-users text-4xl text-purple-400 mb-4"></i>
+              <h4 class="text-lg font-bold text-foreground">
+                Clueless Consumers
+              </h4>
             </div>
-            <ul class="space-y-3 text-gray-600">
+            <ul class="space-y-3 text-muted-foreground">
               <li class="text-center md:text-left md:flex md:items-start">
                 <i
                   class="fas fa-exclamation-triangle text-muted-foreground mt-1 mr-3"
@@ -456,65 +516,56 @@
                   >Only 21% fully aware of ingredients in their products</span
                 >
               </li>
+            </ul>
+          </div>
+
+          <div class="feature-card bg-white hover-scale" data-aos="fade-up">
+            <div class="text-center mb-6">
+              <i class="fas fa-shop text-4xl text-blue-400 mb-4"></i>
+              <h4 class="text-lg font-bold text-foreground">Bumbling Brands</h4>
+            </div>
+            <ul class="space-y-3 text-muted-foreground">
               <li class="text-center md:text-left md:flex md:items-start">
-                <i
-                  class="fas fa-exclamation-triangle text-muted-foreground mt-1 mr-3"
-                ></i>
-                <span>Limited access to dermatologist expertise</span>
+                <i class="fas fa-times text-muted-foreground mt-1 mr-3"></i>
+                <span
+                  ><span class="font-medium">$868 in revenue loss</span> due to
+                  outdated development models</span
+                >
+              </li>
+              <li class="text-center md:text-left md:flex md:items-start">
+                <i class="fas fa-times text-muted-foreground mt-1 mr-3"></i>
+                <span>Limited channels to reach healthcare professionals</span>
               </li>
             </ul>
           </div>
 
           <div class="feature-card bg-white hover-scale" data-aos="fade-up">
             <div class="text-center mb-6">
-              <i class="fas fa-user-md text-4xl text-primary mb-4"></i>
-              <h4 class="text-xl font-bold text-gray-800">For Doctors</h4>
+              <i class="fas fa-user-doctor text-4xl text-green-400 mb-4"></i>
+              <h4 class="text-lg font-bold text-foreground">
+                Disconneded Doctors
+              </h4>
             </div>
-            <ul class="space-y-3 text-gray-600">
+            <ul class="space-y-3 text-muted-foreground">
               <li class="text-center md:text-left md:flex md:items-start">
-                <i class="fas fa-times text-muted-foreground mt-1 mr-3"></i>
-                <span>Limited digital tools for practice management</span>
-              </li>
-              <li class="text-center md:text-left md:flex md:items-start">
-                <i class="fas fa-times text-muted-foreground mt-1 mr-3"></i>
+                <i class="fas fa-clock text-muted-foreground mt-1 mr-3"></i>
                 <span>Disconnected from product innovation</span>
               </li>
               <li class="text-center md:text-left md:flex md:items-start">
-                <i class="fas fa-times text-muted-foreground mt-1 mr-3"></i>
+                <i class="fas fa-industry text-muted-foreground mt-1 mr-3"></i>
                 <span>No unified platform for knowledge monetization</span>
               </li>
             </ul>
           </div>
 
           <div class="feature-card bg-white hover-scale" data-aos="fade-up">
-            <div class="text-center mb-6">
-              <i class="fas fa-building text-4xl text-primary mb-4"></i>
-              <h4 class="text-xl font-bold text-gray-800">For Brands</h4>
+            <div class="texcenter mb-6">
+              <i class="fas fa-industry text-4xl text-orange-400 mb-4"></i>
+              <h4 class="text-lg font-bold text-foreground">
+                Sidelined Suppliers
+              </h4>
             </div>
-            <ul class="space-y-3 text-gray-600">
-              <li class="text-center md:text-left md:flex md:items-start">
-                <i class="fas fa-clock text-muted-foreground mt-1 mr-3"></i>
-                <span
-                  >$86B in revenue loss due to outdated development models</span
-                >
-              </li>
-              <li class="text-center md:text-left md:flex md:items-start">
-                <i class="fas fa-clock text-muted-foreground mt-1 mr-3"></i>
-                <span>18-24 months for product development</span>
-              </li>
-              <li class="text-center md:text-left md:flex md:items-start">
-                <i class="fas fa-clock text-muted-foreground mt-1 mr-3"></i>
-                <span>Limited channels to healthcare professionals</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="feature-card bg-white hover-scale" data-aos="fade-up">
-            <div class="text-center mb-6">
-              <i class="fas fa-industry text-4xl text-primary mb-4"></i>
-              <h4 class="text-xl font-bold text-gray-800">For Suppliers</h4>
-            </div>
-            <ul class="space-y-3 text-gray-600">
+            <ul class="space-y-3 text-muted-foreground">
               <li class="text-center md:text-left md:flex md:items-start">
                 <i
                   class="fas fa-layer-group text-muted-foreground mt-1 mr-3"
@@ -525,12 +576,6 @@
                 <i class="fas fa-eye-slash text-muted-foreground mt-1 mr-3"></i>
                 <span>Limited visibility into market trends</span>
               </li>
-              <li class="text-center md:text-left md:flex md:items-start">
-                <i
-                  class="fas fa-puzzle-piece text-muted-foreground mt-1 mr-3"
-                ></i>
-                <span>Fragmented industry connections</span>
-              </li>
             </ul>
           </div>
         </div>
@@ -538,20 +583,20 @@
     </div>
 
     <!-- Slide 4: The Solution -->
-    <div class="pt-10 md:pt-20">
+    <div class="home-section pt-10 md:pt-20">
       <div class="container overflow-hidden mx-auto px-6">
         <!-- <h2 class="mb-4 sub-heading">The Solution – SkinBB Metaverse</h2> -->
 
-        <h2 class="text-intro" data-aos="fade-up">The Solution</h2>
+        <h2 class="sub-heading mb-3" data-aos="fade-up">The Solution</h2>
         <h2
-          class="sub-heading text-center mb-3"
+          class="text-3xl underline text-center mb-3"
           data-aos="fade-up"
           data-aos-delay="50"
         >
-          SkinBB Metaverse
+          "SkinBB Metaverse"
         </h2>
         <p
-          class="mb-8 md:mb-12 text-primary text-center"
+          class="mb-8 md:mb-12 text-xl text-muted-foreground text-center"
           data-aos="fade-up"
           data-aos-delay="100"
         >
@@ -560,21 +605,21 @@
 
         <div class="max-w-6xl pb-5 mx-auto b-10 md:pb-20">
           <div
-            class="bg-white rounded-3xl p-4 md:p-8 shadow-lg border border-border"
+            class="bg-primary/20 rounded-3xl p-4 md:p-8 shadow-lg border border-border"
             data-aos="zoom-in"
             data-aos-delay="150"
           >
             <h4
-              class="text-2xl font-semibold mt-4 text-center mb-8 text-gray-800"
+              class="text-2xl font-semibold mt-4 text-center mb-8 text-foreground"
             >
               Core Platform Architecture
             </h4>
 
             <div class="space-y-4 md:space-y-6">
               <div class="feature-card text-center">
-                <h5 class="text-xl font-semibold mb-4 text-gray-800">
+                <!-- <h5 class="text-xl font-semibold mb-4 text-foreground">
                   SKINBB UNIFIED PLATFORM
-                </h5>
+                </h5> -->
                 <div class="flex justify-center gap-4 flex-wrap">
                   <span
                     class="px-4 py-2 bg-purple-200 rounded-full text-purple-800"
@@ -597,25 +642,34 @@
               <div
                 class="feature-card bg-gradient-to-r from-blue-100 to-purple-100"
               >
-                <h5 class="text-lg font-semibold text-center text-gray-800">
-                  KNOWLEDGE LAYER: AI-Powered Intelligence Engine
+                <h5 class="text-lg font-semibold text-center text-foreground">
+                  KNOWLEDGE LAYER
                 </h5>
+                <p class="text-muted-foreground text-lg text-center">
+                  AI-Powered Intelligence Engine
+                </p>
               </div>
 
               <div
                 class="feature-card bg-gradient-to-r from-green-100 to-blue-100"
               >
-                <h5 class="text-lg font-semibold text-center text-gray-800">
-                  CONNECTION LAYER: Direct Stakeholder Interactions | Surveys
+                <h5 class="text-lg font-semibold text-center text-foreground">
+                  CONNECTION LAYER
                 </h5>
+                <p class="text-muted-foreground text-lg text-center">
+                  Direct Stakeholder Interactions | Surveys
+                </p>
               </div>
 
               <div
                 class="feature-card bg-gradient-to-r from-orange-100 to-red-100"
               >
-                <h5 class="text-lg font-semibold text-center text-gray-800">
-                  TRANSACTION LAYER: Consultations | Promotions | Sales
+                <h5 class="text-lg font-semibold text-center text-foreground">
+                  TRANSACTION LAYER
                 </h5>
+                <p class="text-muted-foreground text-lg text-center">
+                  Consultations | Promotions | Sales
+                </p>
               </div>
             </div>
 
@@ -630,7 +684,7 @@
     </div>
 
     <!-- Slide 5: How SkinBB Works -->
-    <div class="pt-10 md:pt-20 relative">
+    <div class="home-section pt-10 md:pt-20 relative">
       <div class="container overflow-hidden max-w-4xl mx-auto px-6">
         <div class="ssr-variant hidden-oeancu hidden-72rtr7">
           <div
@@ -653,11 +707,9 @@
             ></div>
           </div>
         </div>
-        <h2 class="text-intro text-center" data-aos="fade-up">
-          How SkinBB Works
-        </h2>
+        <h2 class="sub-heading mb-4" data-aos="fade-up">How SkinBB Works</h2>
         <h2
-          class="sub-heading text-center md:mb-15 mb-5"
+          class="text-xl text-center md:mb-15 mb-5"
           data-aos="fade-up"
           data-aos-delay="50"
         >
@@ -669,51 +721,55 @@
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <div class="feature-card hover-scale">
-            <h4 class="text-xl font-bold mb-4 text-primary">
+          <div class="feature-card hover-scale text-center !border-purple-600">
+            <h4 class="text-xl font-bold mb-4 text-purple-600">
               Consumer ↔ Brand
             </h4>
-            <p class="text-gray-600">
-              Direct feedback, real-time insights, personalized recommendations,
-              transparency, trust
+            <p class="text-muted-foreground">
+              Direct feedback & Real-time insights, Personalized
+              recommendations, Transparency & trust
             </p>
           </div>
 
-          <div class="feature-card hover-scale">
-            <h4 class="text-xl font-bold mb-4 text-green-600">
+          <div class="feature-card hover-scale text-center !border-blue-600">
+            <h4 class="text-xl font-bold mb-4 text-blue-400">
               Consumer ↔ Doctor
             </h4>
-            <p class="text-gray-600">
-              Expert consultations, education, personalized treatment,
-              accessible care
+            <p class="text-muted-foreground">
+              Expert consultations & education, Accessible dermatology care,
+              Personalized treatment plans
             </p>
           </div>
 
-          <div class="feature-card hover-scale">
-            <h4 class="text-xl font-bold mb-4 text-blue-600">Brand ↔ Doctor</h4>
-            <p class="text-gray-600">
-              Clinical validation, collaborative development, expert endorsement
+          <div class="feature-card hover-scale text-center !border-green-400">
+            <h4 class="text-xl font-bold mb-4 text-green-400">
+              Brand ↔ Doctor
+            </h4>
+            <p class="text-muted-foreground">
+              Real time clinical insights, Collaborative development,
+              Endorsement opportunities
             </p>
           </div>
 
-          <div class="feature-card hover-scale">
-            <h4 class="text-xl font-bold mb-4 text-orange-600">
+          <div class="feature-card hover-scale text-center !border-orange-400">
+            <h4 class="text-xl font-bold mb-4 text-orange-400">
               Brand ↔ Supplier
             </h4>
-            <p class="text-gray-600">
-              Direct sourcing, simplified supply chain, innovation discovery
+            <p class="text-muted-foreground">
+              Direct sourcing & procurement, Simplified supply chain, Innovation
+              discovery & partnerships
             </p>
           </div>
         </div>
       </div>
     </div>
-
+    <!-- 
     <div
-      class="container overflow-hidden inset-shadow-sm mx-auto bg-red-50 md:py-5 md:py-10"
+      class="home-section container overflow-hidden inset-shadow-sm mx-auto bg-red-50 md:py-5 md:py-10"
     >
       <div class="rounded-2xl p-8 text-center">
         <h3
-          class="text-lg md:text-2xl font-semibold mb-6 text-gray-800"
+          class="text-lg md:text-2xl font-semibold mb-6 text-foreground"
           data-aos="zoom-in"
         >
           Network Effect Formula
@@ -765,168 +821,18 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <!-- Slide 6: Tech Suite Overview -->
-    <div class="pt-10 md:pt-20">
-      <div class="container overflow-hidden mx-auto px-6 max-w-6xl">
-        <h2 class="text-intro" data-aos="fade-up">Tech Suite Overview</h2>
-        <h2
-          class="sub-heading text-center md:mb-15 mb-5"
-          data-aos="fade-up"
-          data-aos-delay="50"
-        >
-          Comprehensive Feature Ecosystem
-        </h2>
-
-        <div class="grid lg:grid-cols-2 gap-4 md:gap-8 pb-10 md:pb-20">
-          <div
-            class="hover:shadow-xl hover:scale-102 transition-all bg-background border border-border p-4 space-y-6 rounded-2xl"
-            data-aos="fade-up"
-            data-aos-delay="50"
-          >
-            <div class="text-center mt-4">
-              <i class="fas fa-mobile-alt text-4xl text-purple-500 mb-4"></i>
-              <h3 class="text-2xl font-semibold text-gray-800">
-                For Consumers (B2C App)
-              </h3>
-            </div>
-            <hr class="border-border" />
-
-            <div class="grid gap-2 md:grid-cols-2">
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
-              >
-                <i class="fas fa-search text-purple-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Label Looker</h4>
-                  <p class="text-gray-600">AI-powered ingredient decoder</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
-              >
-                <i class="fas fa-cog text-purple-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Routine Builder</h4>
-                  <p class="text-gray-600">Personalized regimen creator</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
-              >
-                <i class="fas fa-shield-alt text-purple-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">
-                    Environmental Alerts
-                  </h4>
-                  <p class="text-gray-600">Location-based skin protection</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
-              >
-                <i class="fas fa-user-md text-purple-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Expert Access</h4>
-                  <p class="text-gray-600">Direct dermatologist connections</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
-              >
-                <i class="fas fa-users text-purple-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Community</h4>
-                  <p class="text-gray-600">Peer & expert discussions</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="hover:shadow-xl hover:scale-102 transition-all border border-border space-y-6 p-4 rounded-2xl"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="text-center mt-4">
-              <i class="fas fa-chart-bar text-4xl text-blue-600 mb-4"></i>
-              <h3 class="text-2xl font-bold text-gray-800">
-                For Business (B2B Dashboards)
-              </h3>
-            </div>
-            <hr class="border-border" />
-
-            <div class="grid gap-2 md:grid-cols-2">
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
-              >
-                <i class="fas fa-chart-simple text-blue-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Market Insights</h4>
-                  <p class="text-gray-600">Real-time consumer analytics</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
-              >
-                <i class="fas fa-poll text-blue-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Survey Engine</h4>
-                  <p class="text-gray-600">Hyper-targeted research in hours</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
-              >
-                <i class="fas fa-chart-line text-blue-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Ingredient Trends</h4>
-                  <p class="text-gray-600">Industry-first trend analysis</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
-              >
-                <i class="fas fa-link text-blue-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">Direct Connect</h4>
-                  <p class="text-gray-600">Stakeholder collaboration tools</p>
-                </div>
-              </div>
-
-              <div
-                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
-              >
-                <i class="fas fa-bullhorn text-blue-500 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">
-                    Promotion Platform
-                  </h4>
-                  <p class="text-gray-600">Targeted marketing capabilities</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Slide 7: Unique Value Propositions -->
-    <div class="pt-10 md:pt-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <!-- Slide 6: Unique Value Propositions -->
+    <div
+      class="home-section pt-10 md:pt-20 bg-gradient-to-t from-indigo-40 to-purple-50"
+    >
       <div class="max-w-6xl container overflow-hidden mx-auto px-6">
-        <h2 class="text-intro" data-aos="fade-up">
+        <h2 class="sub-heading mb-4" data-aos="fade-up">
           Why SkinBB is Revolutionary
         </h2>
         <h2
-          class="sub-heading text-center md:mb-15 mb-5"
+          class="text-xl text-center md:mb-15 mb-5"
           data-aos="fade-up"
           data-aos-delay="50"
         >
@@ -946,12 +852,13 @@
               >
                 <span class="text-2xl font-bold text-indigo-600">1</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Knowledge-First Approach
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
-              Prioritize unbiased, expert-verified information
+            <p class="text-muted-foreground text-center">
+              Unlike sales-driven platforms, we prioritize unbiased,
+              expert-verified information
             </p>
           </div>
 
@@ -964,12 +871,13 @@
               >
                 <span class="text-2xl font-bold text-primary">2</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 All Stakeholders, One Platform
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
-              Connects consumers, brands, doctors, suppliers globally
+            <p class="text-muted-foreground text-center">
+              First global platform connecting consumers, brands, doctors, and
+              suppliers
             </p>
           </div>
 
@@ -982,11 +890,11 @@
               >
                 <span class="text-2xl font-bold text-blue-600">3</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Real-Time Intelligence
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
+            <p class="text-muted-foreground text-center">
               From 18-month research cycles to real-time insights
             </p>
           </div>
@@ -1000,10 +908,12 @@
               >
                 <span class="text-2xl font-bold text-green-600">4</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">Data Intelligence</h3>
+              <h3 class="text-xl font-bold text-foreground">
+                Data Intelligence
+              </h3>
             </div>
-            <p class="text-gray-600 text-center">
-              Doctors get free CMS, ensuring rapid adoption
+            <p class="text-muted-foreground text-center">
+              Game-changer: Doctors get free CMS, ensuring rapid adoption
             </p>
           </div>
 
@@ -1016,12 +926,13 @@
               >
                 <span class="text-2xl font-bold text-orange-600">5</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Hyper-Targeting Capabilities
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
-              Target by skin type, concerns, location, age, purchase history
+            <p class="text-muted-foreground text-center">
+              Target by: skin type, concerns, location, age, purchase history
+              and more
             </p>
           </div>
 
@@ -1034,11 +945,11 @@
               >
                 <span class="text-2xl font-bold text-red-600">6</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Ingredient-Level Analytics
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
+            <p class="text-muted-foreground text-center">
               Industry's first molecular-level trend analysis
             </p>
           </div>
@@ -1046,8 +957,180 @@
       </div>
     </div>
 
+    <!-- Slide 7: Tech Suite Overview -->
+    <div class="home-section pt-10 md:pt-20">
+      <div class="container overflow-hidden mx-auto px-6 max-w-6xl">
+        <h2 class="sub-heading mb-4" data-aos="fade-up">Tech Suite Overview</h2>
+        <h2
+          class="text-xl text-subheading text-center md:mb-15 mb-5"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
+          Comprehensive Feature Ecosystem
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-4 md:gap-8 pb-10 md:pb-20">
+          <div
+            class="hover:shadow-xl hover:scale-102 transition-all bg-background border border-border p-4 space-y-6 rounded-2xl"
+            data-aos="fade-up"
+            data-aos-delay="50"
+          >
+            <div class="text-center mt-4">
+              <i class="fas fa-mobile-alt text-4xl text-purple-500 mb-4"></i>
+              <h3 class="text-2xl font-semibold text-foreground">
+                For Consumers (B2C App)
+              </h3>
+            </div>
+            <hr class="border-border" />
+
+            <div class="grid gap-2 md:grid-cols-2">
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
+              >
+                <i class="fas fa-search text-purple-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Label Looker</h4>
+                  <p class="text-muted-foreground">
+                    AI-powered ingredient decoder
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
+              >
+                <i class="fas fa-cog text-purple-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Routine Builder</h4>
+                  <p class="text-muted-foreground">
+                    Personalized regimen creator
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
+              >
+                <i class="fas fa-shield-alt text-purple-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Environmental Alerts
+                  </h4>
+                  <p class="text-muted-foreground">
+                    Location-based skin protection
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
+              >
+                <i class="fas fa-user-md text-purple-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Expert Access</h4>
+                  <p class="text-muted-foreground">
+                    Direct dermatologist connections
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-purple-50"
+              >
+                <i class="fas fa-users text-purple-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Community</h4>
+                  <p class="text-muted-foreground">Peer & expert discussions</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="hover:shadow-xl hover:scale-102 transition-all border border-border space-y-6 p-4 rounded-2xl"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="text-center mt-4">
+              <i class="fas fa-chart-bar text-4xl text-blue-600 mb-4"></i>
+              <h3 class="text-2xl font-bold text-foreground">
+                For Business (B2B Dashboards)
+              </h3>
+            </div>
+            <hr class="border-border" />
+
+            <div class="grid gap-2 md:grid-cols-2">
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
+              >
+                <i class="fas fa-chart-simple text-blue-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Market Insights</h4>
+                  <p class="text-muted-foreground">
+                    Real-time consumer analytics
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
+              >
+                <i class="fas fa-poll text-blue-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Survey Engine</h4>
+                  <p class="text-muted-foreground">
+                    Hyper-targeted research in hours
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
+              >
+                <i class="fas fa-chart-line text-blue-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Ingredient Trends
+                  </h4>
+                  <p class="text-muted-foreground">
+                    Industry-first trend analysis
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
+              >
+                <i class="fas fa-link text-blue-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">Direct Connect</h4>
+                  <p class="text-muted-foreground">
+                    Stakeholder collaboration tools
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start space-x-4 p-3 rounded-lg hover:bg-blue-50"
+              >
+                <i class="fas fa-bullhorn text-blue-500 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Promotion Platform
+                  </h4>
+                  <p class="text-muted-foreground">
+                    Targeted marketing capabilities
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Slide 8: LabelLooker 1.0 -->
-    <div class="pt-10 md:pt-20 relative">
+    <div class="home-section pt-10 md:pt-20 relative">
       <div class="ssr-variant hidden-oeancu hidden-72rtr7">
         <div
           class="flex-none mix-blend-darken opacity-5 absolute inset-0"
@@ -1073,71 +1156,45 @@
       <div
         class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20"
       >
-        <!-- <h2 class="text-5xl font-bold text-center mb-8 text-gray-800">
+        <!-- <h2 class="text-5xl font-bold text-center mb-8 text-foreground">
           LabelLooker 1.0 – AI-Powered Ingredient Intelligence Engine
         </h2> -->
 
-        <h2 class="text-intro" data-aos="fade-up">LabelLooker 1.0</h2>
+        <h2 class="sub-heading mb-4" data-aos="fade-up">LabelLooker 1.0</h2>
         <h2
-          class="sub-heading text-center md:mb-15 mb-10"
+          class="text-xl text-muted-foreground text-center md:mb-15 mb-10"
           data-aos="fade-up"
           data-aos-delay="50"
         >
           AI-Powered Ingredient Intelligence Engine
         </h2>
 
-        <div class="grid lg:grid-cols-3 gap-4 md:gap-8 mb-12">
-          <div
-            class="lg:col-span-1 lg:row-span-2"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
+        <div class="grid lg:grid-cols-5 gap-4 md:gap-8 mb-12">
+          <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="100">
             <div
               class="feature-card bg-gradient-to-br from-green-100 to-blue-100"
             >
-              <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">
+              <h3 class="text-2xl font-bold mb-6 text-foreground text-center">
                 User Benefits
               </h3>
 
               <div class="space-y-4 md:space-y-6">
                 <div>
-                  <h4 class="font-semibold text-green-600 mb-2">Consumers</h4>
-                  <p class="text-gray-600 text-sm">
-                    92% reduction in adverse reactions, 3.2x more informed
-                    purchases
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold text-blue-600 mb-2">Brands</h4>
-                  <p class="text-gray-600 text-sm">
-                    40% increase in consumer trust, 28% higher retention
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold text-primary mb-2">Doctors</h4>
-                  <p class="text-gray-600 text-sm">
-                    62% reduction in consultation time, better recommendation
-                    accuracy
-                  </p>
-                </div>
-
-                <div>
-                  <h4 class="font-semibold text-orange-600 mb-2">Suppliers</h4>
-                  <p class="text-gray-600 text-sm">
-                    Direct visibility of ingredient performance and feedback
+                  <p class="text-muted-foreground list-disc list-inside">
+                    Skin Profile Match: Reduction in adverse reactions, Know
+                    what's inside, More informed purchases, Personalised
+                    skincare made simple. Avoid trials, save money.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="150">
+          <div class="lg:col-span-3" data-aos="fade-up" data-aos-delay="150">
             <div
               class="feature-card bg-gradient-to-br from-purple-100 to-blue-100"
             >
-              <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">
+              <h3 class="text-2xl font-bold mb-6 text-foreground text-center">
                 Key Features
               </h3>
 
@@ -1145,10 +1202,10 @@
                 <div class="flex items-start space-x-3">
                   <i class="fas fa-bolt text-primary mt-1"></i>
                   <div>
-                    <h4 class="font-semibold text-gray-800">
+                    <h4 class="font-semibold text-foreground">
                       Instant Ingredient Analysis
                     </h4>
-                    <p class="text-gray-600 text-sm">
+                    <p class="text-muted-foreground text-sm">
                       Decode INCI names in seconds
                     </p>
                   </div>
@@ -1157,10 +1214,10 @@
                 <div class="flex items-start space-x-3">
                   <i class="fas fa-shield-alt text-primary mt-1"></i>
                   <div>
-                    <h4 class="font-semibold text-gray-800">
+                    <h4 class="font-semibold text-foreground">
                       Personalized Safety Alerts
                     </h4>
-                    <p class="text-gray-600 text-sm">
+                    <p class="text-muted-foreground text-sm">
                       Flags allergens based on profile
                     </p>
                   </div>
@@ -1169,10 +1226,10 @@
                 <div class="flex items-start space-x-3">
                   <i class="fas fa-brain text-primary mt-1"></i>
                   <div>
-                    <h4 class="font-semibold text-gray-800">
+                    <h4 class="font-semibold text-foreground">
                       Efficacy Prediction
                     </h4>
-                    <p class="text-gray-600 text-sm">
+                    <p class="text-muted-foreground text-sm">
                       AI-powered effectiveness forecasting
                     </p>
                   </div>
@@ -1181,10 +1238,10 @@
                 <div class="flex items-start space-x-3">
                   <i class="fas fa-exclamation-triangle text-primary mt-1"></i>
                   <div>
-                    <h4 class="font-semibold text-gray-800">
+                    <h4 class="font-semibold text-foreground">
                       Ingredient Interaction Detection
                     </h4>
-                    <p class="text-gray-600 text-sm">
+                    <p class="text-muted-foreground text-sm">
                       Identifies conflicts between products
                     </p>
                   </div>
@@ -1193,11 +1250,11 @@
             </div>
           </div>
 
-          <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="150">
+          <!-- <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="150">
             <div
               class="feature-card space-y-6 bg-gradient-to-br from-blue-100 to-indigo-100"
             >
-              <h3 class="text-2xl font-bold text-gray-800 text-center">
+              <h3 class="text-2xl font-bold text-foreground text-center">
                 Technical Specifications
               </h3>
               <hr class="border-border" />
@@ -1232,10 +1289,10 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
 
-        <div
+        <!-- <div
           class="max-w-6xl rounded-4xl inset-shadow-sm mx-auto bg-red-50 py-10 md:py-10 px-2"
           data-aos="zoom-out"
         >
@@ -1272,7 +1329,7 @@
               >Vitamin C</span
             >
             <span
-              class="px-4 py-2 bg-gray-200 text-gray-800 rounded-full text-sm font-semibold hover-scale"
+              class="px-4 py-2 bg-gray-200 text-foreground rounded-full text-sm font-semibold hover-scale"
               >Fragrance</span
             >
             <span
@@ -1286,18 +1343,20 @@
           </div>
 
           <div class="text-center mt-8">
-            <p class="text-gray-600 font-semibold">
+            <p class="text-muted-foreground font-semibold">
               Fully deployable as API, SDK, or white-labeled solution
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
     <!-- Slide 9: Environmental HL-HP Engine -->
-    <div class="pt-10 md:pt-20 bg-gradient-to-br from-green-50 to-blue-50">
+    <div
+      class="home-section pt-10 md:pt-20 bg-gradient-to-br from-green-50 to-blue-50"
+    >
       <div
-        class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20"
+        class="container overflow-hidden max-w-5xl mx-auto px-6 pb-10 md:pb-20"
       >
         <h2 class="text-intro" data-aos="fade-up">
           Environmental HL-HP Engine
@@ -1310,32 +1369,32 @@
           Location-Based Adaptive Skin Protection
         </h2>
 
-        <div class="grid lg:grid-cols-2 md:gap-8 gap-4 mb-4 md:mb-8">
+        <div class="flex flex-col sm:grid  sm:grid-cols-2 md:gap-8 gap-4 mb-4 md:mb-8">
           <div
-            class="feature-card bg-white hover-scale"
+            class="feature-card bg-white hover-scale col-span-2"
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">
+            <h3 class="text-2xl font-bold mb-6 text-center text-foreground">
               Monitored Environmental Factors
             </h3>
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div class="text-center p-4 bg-yellow-100 rounded-lg">
                 <i class="fas fa-sun text-3xl text-yellow-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800">UV Index</h4>
+                <h4 class="font-semibold text-foreground">UV Index</h4>
               </div>
               <div class="text-center p-4 bg-green-100 rounded-lg">
                 <i class="fas fa-leaf text-3xl text-green-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800">Pollen</h4>
+                <h4 class="font-semibold text-foreground">Temperature</h4>
               </div>
               <div class="text-center p-4 bg-gray-100 rounded-lg">
-                <i class="fas fa-smog text-3xl text-gray-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800">Air Quality</h4>
+                <i class="fas fa-smog text-3xl text-muted-foreground mb-3"></i>
+                <h4 class="font-semibold text-foreground">Air Quality</h4>
               </div>
               <div class="text-center p-4 bg-blue-100 rounded-lg">
                 <i class="fas fa-tint text-3xl text-blue-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800">Humidity</h4>
+                <h4 class="font-semibold text-foreground">Humidity</h4>
               </div>
             </div>
           </div>
@@ -1345,19 +1404,85 @@
             data-aos="fade-left"
             data-aos-delay="100"
           >
-            <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">
+            <h3
+              class="text-xl font-semibold mb-6 text-center text-muted-foreground"
+            >
               Adaptive Protection System
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-circle-check text-blue-600 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Personalized Sensitivity Profiles
+                  </h4>
+                  <p class="text-muted-foreground text-sm">
+                    Adjusts recommendations based on individual skin types,
+                    conditions, and sensitivities
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-circle-check text-blue-600 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Dynamic Risk Assessment
+                  </h4>
+                  <p class="text-muted-foreground text-sm">
+                    Calculates real-time Hazard (H) scores and recommends
+                    Protection (P) measures
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-circle-check text-blue-600 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Proactive Notifications
+                  </h4>
+                  <p class="text-muted-foreground text-sm">
+                    Alerts users about changing conditions requiring skincare
+                    adjustments
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-circle-check text-blue-600 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Product Efficacy Analysis
+                  </h4>
+                  <p class="text-muted-foreground text-sm">
+                    Evaluates how current products perform under specific
+                    environmental conditions
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="feature-card bg-white hover-scale"
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
+            <h3
+              class="text-xl font-semibold mb-6 text-center text-muted-foreground"
+            >
+              Business Impact & Benefits
             </h3>
 
             <div class="space-y-4">
               <div class="flex items-start space-x-3">
                 <i class="fas fa-user text-blue-600 mt-1"></i>
                 <div>
-                  <h4 class="font-semibold text-gray-800">
-                    Personalized Sensitivity Profiles
-                  </h4>
-                  <p class="text-gray-600 text-sm">
-                    Individual skin type analysis
+                  <h4 class="font-semibold text-foreground">Users</h4>
+                  <p class="text-muted-foreground text-sm">
+                    Report increased confidence in their skincare routine
                   </p>
                 </div>
               </div>
@@ -1365,23 +1490,11 @@
               <div class="flex items-start space-x-3">
                 <i class="fas fa-chart-line text-blue-600 mt-1"></i>
                 <div>
-                  <h4 class="font-semibold text-gray-800">
-                    Dynamic Risk Assessment
+                  <h4 class="font-semibold text-foreground">
+                    Higher conversion
                   </h4>
-                  <p class="text-gray-600 text-sm">
-                    Hazard (H) & protection (P) scores
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-3">
-                <i class="fas fa-bell text-blue-600 mt-1"></i>
-                <div>
-                  <h4 class="font-semibold text-gray-800">
-                    Proactive Notifications
-                  </h4>
-                  <p class="text-gray-600 text-sm">
-                    Real-time alerts and recommendations
+                  <p class="text-muted-foreground text-sm">
+                    For environmental protection products
                   </p>
                 </div>
               </div>
@@ -1389,11 +1502,20 @@
               <div class="flex items-start space-x-3">
                 <i class="fas fa-flask text-blue-600 mt-1"></i>
                 <div>
-                  <h4 class="font-semibold text-gray-800">
-                    Product Efficacy Analysis
+                  <h4 class="font-semibold text-foreground">Valuable data</h4>
+                  <p class="text-muted-foreground text-sm">
+                    For R&D teams on real-world product performance
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <i class="fas fa-earth-asia text-blue-600 mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-foreground">
+                    Localized insights
                   </h4>
-                  <p class="text-gray-600 text-sm">
-                    Under environmental conditions
+                  <p class="text-muted-foreground text-sm">
+                    For regional product development strategies
                   </p>
                 </div>
               </div>
@@ -1401,74 +1523,19 @@
           </div>
         </div>
 
-        <div class="grid lg:grid-cols-3 md:gap-8 gap-4">
-          <div
-            class="feature-card bg-white hover-scale"
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
-            <h3 class="text-xl font-bold mb-4 text-center text-primary">
-              Technical Specifications
-            </h3>
-            <ul class="space-y-2 text-sm text-gray-600">
-              <li class="flex items-start">
-                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                <span>APIs connected to 8+ global environmental networks</span>
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                <span
-                  >Processes data from 15,000+ locations with 5-min update
-                  intervals</span
-                >
-              </li>
-              <li class="flex items-start">
-                <i class="fas fa-check text-green-500 mr-2 mt-1"></i>
-                <span
-                  >Low power consumption, privacy-first (on-device location
-                  processing)</span
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div
-            class="feature-card bg-gradient-to-r from-blue-100 to-purple-100 hover-scale lg:col-span-2"
-            data-aos="fade-left"
-            data-aos-delay="100"
-          >
-            <h3 class="text-xl font-bold mb-4 text-center text-gray-800">
-              Impact & Results
-            </h3>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div class="text-center">
-                <div
-                  class="text-3xl font-black text-blue-600 mb-2 number-counter"
-                >
-                  87%
-                </div>
-                <p class="text-gray-600 font-semibold">
-                  of users report increased confidence
-                </p>
-              </div>
-              <div class="text-center">
-                <div
-                  class="text-3xl font-black text-primary mb-2 number-counter"
-                >
-                  42%
-                </div>
-                <p class="text-gray-600 font-semibold">
-                  higher conversion for protection products
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2
+          class="text-xl text-center font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
+          "Bridging the gap between daily skincare routines and real-world
+          environmental exposures"
+        </h2>
       </div>
     </div>
 
     <!-- Slide 10: Direct Market Research Disruption -->
-    <div class="py-10 md:py-20">
+    <div class="home-section py-10 md:py-20">
       <div class="container overflow-hiddenmax-w-6xl mx-auto px-6">
         <h2 class="text-intro" data-aos="fade-up">
           Direct Market Research Disruption
@@ -1501,20 +1568,22 @@
               </div>
 
               <div class="bg-white rounded-xl p-6">
-                <h4 class="font-bold text-gray-800 mb-4 text-center">
+                <h4 class="font-bold text-foreground mb-4 text-center">
                   Cost Comparison
                 </h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
                     <div class="text-2xl font-bold text-green-600">₹2-20L</div>
-                    <p class="text-sm text-gray-600">per SkinBB study</p>
+                    <p class="text-sm text-muted-foreground">
+                      per SkinBB study
+                    </p>
                   </div>
                   <div class="text-center">
                     <span class="text-lg font-bold text-gray-400">vs</span>
                   </div>
                   <div class="text-center">
                     <div class="text-2xl font-bold text-red-600">₹50-200L</div>
-                    <p class="text-sm text-gray-600">traditional</p>
+                    <p class="text-sm text-muted-foreground">traditional</p>
                   </div>
                 </div>
               </div>
@@ -1524,7 +1593,7 @@
           <div
             class="feature-card bg-gradient-to-br from-blue-100 to-purple-100 hover-scale"
           >
-            <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">
+            <h3 class="text-2xl font-bold mb-6 text-center text-foreground">
               Use Cases
             </h3>
 
@@ -1534,37 +1603,37 @@
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-white rounded-lg p-2 flex gap-2">
                 <i class="fas fa-lightbulb text-yellow-500 mb-2"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Product concept testing
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-2 flex gap-2">
                 <i class="fas fa-flask text-blue-500 mb-2"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Ingredient perception
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-2 flex gap-2">
                 <i class="fas fa-box text-purple-500 mb-2"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Packaging feedback
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-2 flex gap-2">
                 <i class="fas fa-dollar-sign text-green-500 mb-2"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Price sensitivity
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-2 flex gap-2">
                 <i class="fas fa-chart-bar text-red-500 mb-2"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Competitor analysis
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-2 flex gap-2">
                 <i class="fas fa-rocket text-orange-500 mb-2"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Launch strategy
                 </h4>
               </div>
@@ -1580,21 +1649,23 @@
           <div class="feature-card bg-white hover-scale">
             <div class="text-center mb-2">
               <i class="fas fa-crosshairs text-4xl text-primary mb-4"></i>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Hyper-Targeted Surveys
               </h3>
             </div>
-            <p class="text-gray-600 text-center">(by skin type, behaviors)</p>
+            <p class="text-muted-foreground text-center">
+              (by skin type, behaviors)
+            </p>
           </div>
 
           <div class="feature-card bg-white hover-scale">
             <div class="text-center mb-2">
               <i class="fas fa-tachometer-alt text-4xl text-blue-600 mb-4"></i>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Rapid Insights Engine
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
+            <p class="text-muted-foreground text-center">
               Real-time analytic processing
             </p>
           </div>
@@ -1602,11 +1673,11 @@
           <div class="feature-card bg-white hover-scale">
             <div class="text-center mb-2">
               <i class="fas fa-atom text-4xl text-green-600 mb-4"></i>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Ingredient-Level Analytics
               </h3>
             </div>
-            <p class="text-gray-600 text-center">
+            <p class="text-muted-foreground text-center">
               Molecular insights on performance and perception
             </p>
           </div>
@@ -1615,12 +1686,22 @@
     </div>
 
     <!-- Slide 11: Integrated Doctor-Brand Connection System -->
-    <div class="pt-10 md:pt-20 bg-gradient-to-br from-teal-50 to-cyan-50">
+    <div
+      class="home-section pt-10 md:pt-20 bg-gradient-to-br from-teal-50 to-cyan-50"
+    >
       <div
         class="container pb-10 md:pb-20 overflow-hidden max-w-6xl mx-auto px-6"
       >
-        <h2 class="sub-heading mb-8 md:mb-16" data-aos="fade-up">
+        <h2 class="sub-heading mb-4" data-aos="fade-up">
           Integrated Doctor-Brand Connection System
+        </h2>
+
+        <h2
+          class="text-xl text-muted-foreground mb-8 md:mb-16 text-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          Bridging Healthcare Professionals and Skincare Brands
         </h2>
 
         <div class="grid lg:grid-cols-2 gap-4 md:gap-8">
@@ -1629,27 +1710,27 @@
               class="feature-card bg-white hover-scale"
               data-aos="zoom-in-right"
             >
-              <div class="text-center mb-6">
-                <i class="fas fa-check-circle text-4xl text-teal-600 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-800">
+              <div class="mb-6">
+                <i
+                  class="fas fa-check-circle text-3xl md:text-5xl text-purple-400 mb-4"
+                ></i>
+                <h3 class="text-xl font-bold text-foreground mb-3">
                   Clinical Validation Ecosystem
                 </h3>
+                <p class="text-muted-foreground">
+                  Streamlined platform for dermatologists to clinically validate
+                  skincare products, providing credibility and scientific
+                  backing.
+                </p>
               </div>
-              <ul class="space-y-3 text-gray-600">
+              <ul class="space-y-3 text-muted-foreground">
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-teal-500 mr-3 mt-1"></i>
-                  <span
-                    >Streamlined platform for dermatologists to validate
-                    products</span
-                  >
-                </li>
-                <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-teal-500 mr-3 mt-1"></i>
+                  <i class="fas fa-arrow-right text-purple-400 mr-3 mt-1"></i>
                   <span>Reduces validation time from months to weeks</span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-teal-500 mr-3 mt-1"></i>
-                  <span>Standardized protocols</span>
+                  <i class="fas fa-arrow-right text-purple-400 mr-3 mt-1"></i>
+                  <span>Standardized protocols and reporting </span>
                 </li>
               </ul>
             </div>
@@ -1658,22 +1739,26 @@
               class="feature-card bg-white hover-scale"
               data-aos="zoom-in-right"
             >
-              <div class="text-center mb-6">
-                <i class="fas fa-handshake text-4xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-800">
-                  Evidence-Driven Co-Creation
+              <div class="mb-6">
+                <i
+                  class="fas fa-handshake text-3xl md:text-5xl text-green-400 mb-4"
+                ></i>
+                <h3 class="text-xl font-bold mb-3">
+                  KOL Content & Monetization
                 </h3>
+                <p class="text-muted-foreground">
+                  Empowers dermatologists with monetization channels through
+                  expert content, consultations, and brand partnerships.
+                </p>
               </div>
-              <ul class="space-y-3 text-gray-600">
+              <ul class="space-y-3 text-muted-foreground">
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-blue-500 mr-3 mt-1"></i>
-                  <span
-                    >Joint workspace: medical expertise + brand innovation</span
-                  >
+                  <i class="fas fa-arrow-right text-green-400 mr-3 mt-1"></i>
+                  <span>Transparent revenue-sharing models</span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-blue-500 mr-3 mt-1"></i>
-                  <span>Real-time clinical feedback</span>
+                  <i class="fas fa-arrow-right text-green-400 mr-3 mt-1"></i>
+                  <span>Integrated content distribution network </span>
                 </li>
               </ul>
             </div>
@@ -1684,19 +1769,26 @@
               class="feature-card bg-white hover-scale"
               data-aos="zoom-in-left"
             >
-              <div class="text-center mb-6">
-                <i class="fas fa-star text-4xl text-primary mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-800">
-                  KOL Content & Monetization
+              <div class="mb-6">
+                <i
+                  class="fas fa-star text-3xl md:text-5xl text-blue-400 mb-4"
+                ></i>
+                <h3 class="text-xl font-bold mb-3">
+                  Evidence-Driven Co-Creation
                 </h3>
+                <p class="text-muted-foreground">
+                  Joint product development workspace where medical expertise
+                  meets brand innovation for safer, more effective products.
+                </p>
               </div>
-              <ul class="space-y-3 text-gray-600">
+              <ul class="space-y-3 text-muted-foreground">
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-purple-500 mr-3 mt-1"></i>
-                  <span
-                    >Monetization channels for expert content, consultation,
-                    partnerships</span
-                  >
+                  <i class="fas fa-arrow-right text-blue-400 mr-3 mt-1"></i>
+                  <span>Collaborative formulation development </span>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-arrow-right text-blue-400 mr-3 mt-1"></i>
+                  <span>Real-time clinical feedback integration </span>
                 </li>
               </ul>
             </div>
@@ -1705,20 +1797,24 @@
               class="feature-card bg-white hover-scale"
               data-aos="zoom-in-left"
             >
-              <div class="text-center mb-6">
-                <i class="fas fa-sync-alt text-4xl text-green-600 mb-4"></i>
-                <h3 class="text-xl font-bold text-gray-800">
+              <div class="mb-6">
+                <i class="fas fa-sync-alt text-4xl text-orange-400 mb-4"></i>
+                <h3 class="text-xl font-bold text-foreground mb-3">
                   Rapid Scientific Feedback Loop
                 </h3>
+                <p class="text-muted-foreground">
+                  Continuous communication channel between brands and medical
+                  professionals for iterative product improvements.
+                </p>
               </div>
-              <ul class="space-y-3 text-gray-600">
+              <ul class="space-y-3 text-muted-foreground">
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-green-500 mr-3 mt-1"></i>
-                  <span>Shortens feedback cycle from months to days</span>
+                  <i class="fas fa-arrow-right text-orange-400 mr-3 mt-1"></i>
+                  <span>Reduces feedback cycles from months to days </span>
                 </li>
                 <li class="flex items-start">
-                  <i class="fas fa-arrow-right text-green-500 mr-3 mt-1"></i>
-                  <span>Transparent revenue-sharing, content distribution</span>
+                  <i class="fas fa-arrow-right text-orange-400 mr-3 mt-1"></i>
+                  <span>Early issue identification and resolution </span>
                 </li>
               </ul>
             </div>
@@ -1728,7 +1824,7 @@
     </div>
 
     <!-- Slide 12: Technology & Future-Ready -->
-    <div class="py-10 md:py-20 relative">
+    <div class="home-section py-10 md:py-20 relative">
       <div class="ssr-variant hidden-oeancu hidden-72rtr7">
         <div
           class="flex-none mix-blend-darken opacity-5 absolute inset-0"
@@ -1774,50 +1870,52 @@
             <div class="flex flex-wrap [&>div]:flex-[1_0_100px] gap-4">
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-brain text-3xl text-primary mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   AI/ML Engine
                 </h4>
-                <p class="text-xs text-gray-600">(TensorFlow-powered)</p>
+                <p class="text-xs text-muted-foreground">
+                  (TensorFlow-powered)
+                </p>
               </div>
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-cloud text-3xl text-blue-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Multi-Cloud Infrastructure
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-cubes text-3xl text-green-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Microservices framework
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-link text-3xl text-yellow-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Blockchain Ready
                 </h4>
-                <p class="text-xs text-gray-600">
+                <p class="text-xs text-muted-foreground">
                   (ingredient authenticity, product traceability)
                 </p>
               </div>
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-tachometer-alt text-3xl text-red-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Real-Time Data Processing
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-wifi text-3xl text-indigo-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   IoT Compatible
                 </h4>
               </div>
               <div class="bg-white rounded-lg p-4 text-center">
                 <i class="fas fa-globe text-3xl text-teal-600 mb-3"></i>
-                <h4 class="font-semibold text-gray-800 text-sm">
+                <h4 class="font-semibold text-foreground text-sm">
                   Global Scale Ready
                 </h4>
-                <p class="text-xs text-gray-600">(edge computing)</p>
+                <p class="text-xs text-muted-foreground">(edge computing)</p>
               </div>
             </div>
           </div>
@@ -1837,8 +1935,8 @@
                 <div class="flex items-center space-x-4">
                   <i class="fas fa-microphone-alt text-3xl text-primary"></i>
                   <div>
-                    <h4 class="font-bold text-gray-800">Voice Commerce</h4>
-                    <p class="text-gray-600 text-sm">
+                    <h4 class="font-bold text-foreground">Voice Commerce</h4>
+                    <p class="text-muted-foreground text-sm">
                       AI-powered voice interactions for skincare guidance
                     </p>
                   </div>
@@ -1849,10 +1947,10 @@
                 <div class="flex items-center space-x-4">
                   <i class="fas fa-dna text-3xl text-green-600"></i>
                   <div>
-                    <h4 class="font-bold text-gray-800">
+                    <h4 class="font-bold text-foreground">
                       Genomics-Driven Care
                     </h4>
-                    <p class="text-gray-600 text-sm">
+                    <p class="text-muted-foreground text-sm">
                       Personalized skincare based on genetic markers
                     </p>
                   </div>
@@ -1863,8 +1961,10 @@
                 <div class="flex items-center space-x-4">
                   <i class="fas fa-vr-cardboard text-3xl text-blue-600"></i>
                   <div>
-                    <h4 class="font-bold text-gray-800">Virtual Exhibitions</h4>
-                    <p class="text-gray-600 text-sm">
+                    <h4 class="font-bold text-foreground">
+                      Virtual Exhibitions
+                    </h4>
+                    <p class="text-muted-foreground text-sm">
                       Immersive brand experiences and product demos
                     </p>
                   </div>
@@ -1887,7 +1987,9 @@
     </div>
 
     <!-- Slide 13: Competitive Advantage -->
-    <div class="pt-10 md:pt-20 bg-gradient-to-br from-emerald-50 to-teal-50">
+    <div
+      class="home-section pt-10 md:pt-20 bg-gradient-to-br from-emerald-50 to-teal-50"
+    >
       <div
         class="container overflow-hidden max-w-8xl mx-auto px-6 pb-10 md:pb-20"
       >
@@ -1907,7 +2009,7 @@
           <div class="feature-card bg-white hover-scale">
             <div class="text-center mb-4">
               <i class="fas fa-database text-4xl text-blue-600 mb-4"></i>
-              <h3 class="text-2xl font-bold text-gray-800">Data Moat</h3>
+              <h3 class="text-2xl font-bold text-foreground">Data Moat</h3>
             </div>
             <div class="text-center">
               <div
@@ -1924,7 +2026,9 @@
           <div class="feature-card bg-white hover-scale">
             <div class="text-center mb-4">
               <i class="fas fa-lock text-4xl text-primary mb-4"></i>
-              <h3 class="text-2xl font-bold text-gray-800">Switching Costs</h3>
+              <h3 class="text-2xl font-bold text-foreground">
+                Switching Costs
+              </h3>
             </div>
             <ul class="text-muted-foreground space-y-2 text-base">
               <li class="flex items-center">
@@ -1947,7 +2051,9 @@
               <i
                 class="fas fa-network-wired text-4xl text-emerald-600 mb-4"
               ></i>
-              <h3 class="text-2xl font-bold text-gray-800">Network Effects</h3>
+              <h3 class="text-2xl font-bold text-foreground">
+                Network Effects
+              </h3>
             </div>
             <p class="text-muted-foreground text-center text-base">
               Value grows exponentially with users
@@ -1957,7 +2063,7 @@
           <div class="feature-card bg-white hover-scale">
             <div class="text-center mb-4">
               <i class="fas fa-rocket text-4xl text-orange-600 mb-4"></i>
-              <h3 class="text-2xl font-bold text-gray-800">
+              <h3 class="text-2xl font-bold text-foreground">
                 First-Mover Advantage
               </h3>
             </div>
@@ -1981,7 +2087,7 @@
     </div>
 
     <!-- Slide 14: Competitive Landscape -->
-    <div class="py-10 md:py-20">
+    <div class="home-section py-10 md:py-20">
       <div class="container overflow-hidden max-w-6xl mx-auto px-6">
         <h2 class="text-intro" data-aos="fade-up">Competitive Landscape</h2>
         <h2
@@ -2021,7 +2127,7 @@
               </thead>
               <tbody class="text-center">
                 <tr class="border-b">
-                  <td class="p-4 text-left font-semibold text-gray-800">
+                  <td class="p-4 text-left font-semibold text-foreground">
                     Personalized Recommendations
                   </td>
                   <td class="p-4">
@@ -2037,7 +2143,7 @@
                   <td class="p-4"><i class="fas fa-times text-red-600"></i></td>
                 </tr>
                 <tr class="border-b bg-gray-50">
-                  <td class="p-4 text-left font-semibold text-gray-800">
+                  <td class="p-4 text-left font-semibold text-foreground">
                     Dermatologist Consultation
                   </td>
                   <td class="p-4">
@@ -2051,7 +2157,7 @@
                   <td class="p-4"><i class="fas fa-times text-red-600"></i></td>
                 </tr>
                 <tr class="border-b">
-                  <td class="p-4 text-left font-semibold text-gray-800">
+                  <td class="p-4 text-left font-semibold text-foreground">
                     Tech Tools for Clinical Practice
                   </td>
                   <td class="p-4">
@@ -2063,7 +2169,7 @@
                   <td class="p-4"><i class="fas fa-times text-red-600"></i></td>
                 </tr>
                 <tr class="border-b bg-gray-50">
-                  <td class="p-4 text-left font-semibold text-gray-800">
+                  <td class="p-4 text-left font-semibold text-foreground">
                     Advanced Market Insights
                   </td>
                   <td class="p-4">
@@ -2075,7 +2181,7 @@
                   <td class="p-4"><i class="fas fa-times text-red-600"></i></td>
                 </tr>
                 <tr>
-                  <td class="p-4 text-left font-semibold text-gray-800">
+                  <td class="p-4 text-left font-semibold text-foreground">
                     Open Community Forum
                   </td>
                   <td class="p-4">
@@ -2098,7 +2204,7 @@
       </div>
     </div>
     <!-- Slide 17: Leadership Team -->
-    <div class="pt-10 md:pt-20 bg-gray-100">
+    <div class="home-section pt-10 md:pt-20 bg-gray-100">
       <div
         class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20"
       >
@@ -2118,10 +2224,10 @@
               >
                 <span class="text-2xl font-bold text-white">AM</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">Ajit Marathe</h3>
+              <h3 class="text-xl font-bold text-foreground">Ajit Marathe</h3>
               <p class="text-primary font-semibold">Founder</p>
             </div>
-            <p class="text-gray-600 text-sm">
+            <p class="text-muted-foreground text-sm">
               Founder and former Director of Adroit Biomed Ltd
             </p>
           </div>
@@ -2133,12 +2239,12 @@
               >
                 <span class="text-2xl font-bold text-white">PB</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">
+              <h3 class="text-xl font-bold text-foreground">
                 Dr. Pravin Banodkar
               </h3>
               <p class="text-blue-600 font-semibold">Co-Founder</p>
             </div>
-            <p class="text-gray-600 text-sm">
+            <p class="text-muted-foreground text-sm">
               Director of Skin Crest Clinic, renowned dermatologist & author
             </p>
           </div>
@@ -2150,10 +2256,10 @@
               >
                 <span class="text-2xl font-bold text-white">SS</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">Dr. Soma Sarkar</h3>
+              <h3 class="text-xl font-bold text-foreground">Dr. Soma Sarkar</h3>
               <p class="text-green-600 font-semibold">Co-Founder</p>
             </div>
-            <p class="text-gray-600 text-sm">
+            <p class="text-muted-foreground text-sm">
               Founder at Savoir Wellness Clinic, 17+ years in aesthetics,
               recognized by top magazines
             </p>
@@ -2166,10 +2272,12 @@
               >
                 <span class="text-2xl font-bold text-white">SM</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">Supriya Marathe</h3>
+              <h3 class="text-xl font-bold text-foreground">Supriya Marathe</h3>
               <p class="text-orange-600 font-semibold">Co-Founder</p>
             </div>
-            <p class="text-gray-600 text-sm">Digital Marketing Strategist</p>
+            <p class="text-muted-foreground text-sm">
+              Digital Marketing Strategist
+            </p>
           </div>
 
           <div class="feature-card bg-white hover-scale">
@@ -2179,12 +2287,12 @@
               >
                 <span class="text-2xl font-bold text-white">RN</span>
               </div>
-              <h3 class="text-xl font-bold text-gray-800">Raaj Naik</h3>
+              <h3 class="text-xl font-bold text-foreground">Raaj Naik</h3>
               <p class="text-red-600 font-semibold">
                 Director - Growth and Strategy
               </p>
             </div>
-            <p class="text-gray-600 text-sm">
+            <p class="text-muted-foreground text-sm">
               Investment Banker, Market Expansion, Brand Scaling Expert
             </p>
           </div>
@@ -2194,7 +2302,7 @@
 
     <!-- Slide 19: The Vision -->
     <div
-      class="gradient-bg pt-10 md:pt-20 text-white flex items-center justify-center relative"
+      class="home-section gradient-bg pt-10 md:pt-20 text-white flex items-center justify-center relative"
     >
       <!-- <div class="absolute inset-0 bg-black opacity-30"></div> -->
       <div
