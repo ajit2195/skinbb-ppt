@@ -7,6 +7,15 @@ window.addEventListener("scroll", () => {
   document.getElementById("progress").style.width = scrolled + "%";
 });
 
+
+// const lenis = new Lenis({
+//   autoRaf: true,
+// });
+
+// lenis.on('scroll', (e) => {
+//   console.log(e);
+// });
+
 // Intersection Observer for slide animations
 const slides = document.querySelectorAll(".slide");
 const observer = new IntersectionObserver(
@@ -31,14 +40,15 @@ function animateNumbers() {
     if (counter.dataset.animated) return;
     counter.dataset.animated = "true";
 
-    const target = counter.innerText;
+    const target = counter.innerText.trim();
     const isPercentage = target.includes("%");
     const isCurrency = target.includes("₹") || target.includes("Cr");
     const numericValue = parseFloat(target.replace(/[^\d.]/g, ""));
 
     if (!isNaN(numericValue)) {
       let current = 0;
-      const increment = numericValue / 100;
+      const steps = 50; // number of animation steps
+      const increment = numericValue / steps;
       const timer = setInterval(() => {
         current += increment;
         if (current >= numericValue) {
@@ -46,7 +56,8 @@ function animateNumbers() {
           clearInterval(timer);
         }
 
-        let displayValue = Math.floor(current);
+        // allow decimal precision
+        let displayValue = current < numericValue ? current.toFixed(1) : numericValue;
 
         if (isCurrency && target.includes("Cr")) {
           counter.innerText = "₹" + displayValue + "Cr";
@@ -58,6 +69,8 @@ function animateNumbers() {
           counter.innerText = (displayValue / 1000).toFixed(1) + "M";
         } else if (target.includes("K")) {
           counter.innerText = displayValue + "K";
+        } else if (target.includes("B")) {
+          counter.innerText = displayValue + "B";
         } else if (target.includes("+")) {
           counter.innerText = displayValue + "+";
         } else {
