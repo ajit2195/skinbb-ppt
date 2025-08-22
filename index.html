@@ -242,27 +242,27 @@
       }
 
       html {
-        /* scroll-snap-type: y proximity; /* or y mandatory */
-        /* scroll-behavior: smooth;  */
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
       }
 
       body {
-        /* margin: 0; */
+        margin: 0;
       }
       .home-page {
-        /* scroll-snap-type: y mandatory;
+        scroll-snap-type: y mandatory;
         position: relative;
         overflow-y: scroll;
         scroll-behavior: smooth;
         height: 100dvh;
-        -webkit-overflow-scrolling: touch; */
+        -webkit-overflow-scrolling: touch;
       }
 
       .home-section {
-        /* flex: 0 0 100%; */
-        /* scroll-snap-align: start; */
-        /* scroll-snap-stop: normal; */
-        /* min-height: 100vh; */
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        scroll-snap-stop: normal;
+        min-height: 100vh;
       }
       /* min-height: 100dvh; */
       /* position: sticky;
@@ -272,8 +272,40 @@
       animation-timeline:view();
       animation-range: entry 0% cover 40%; */
     </style>
+
+    <style>
+      .crediential-page {
+        display: block;
+      }
+      .home-section {
+        /* display: none; */
+      }
+    </style>
   </head>
   <body class="home-page text-foreground overflow-x-hidden">
+    <div class="crediential-page fixed w-full h-full z-[9999] bg-white">
+      <div class="min-h-[100dvh] flex items-center justify-center">
+        <div class="space-y-5 shadow md:p-8 p-5 rounded-2xl">
+          <div class="flex flex-col gap-2">
+            <label for="loginCode">Enter Code</label>
+            <input
+              class="border border-border px-4 py-2"
+              type="text"
+              id="loginCode"
+              placeholder="Enter code"
+            />
+            <p id="error" style="color: red; display: none">Invalid code</p>
+          </div>
+          <button
+            class="btn w-full !bg-primary text-primary-foreground"
+            onclick="checkLogin()"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="progress-bar" id="progress"></div>
 
     <!-- Slide 1: Title Slide -->
@@ -284,92 +316,124 @@
         alt=""
       /> -->
 
-    <div
-      class="home-section relative container min-h-[100dvh] flex justify-center items-center overflow-hidden w-full max-w-4xl mx-auto px-6 text-center z-10 py-10"
-    >
-      <div class="ssr-variant">
-        <div
-          class="flex-none mix-blend-darken opacity-5 absolute inset-0"
-          data-framer-name="Texture"
-          name="Texture"
-        >
+    <div class="home-section">
+      <div
+        class="relative container min-h-[100dvh] flex justify-center items-center overflow-hidden w-full max-w-4xl mx-auto px-6 text-center z-10 py-10"
+      >
+        <div class="ssr-variant">
           <div
-            data-framer-background-image-wrapper="true"
-            style="
-              position: absolute;
-              border-radius: inherit;
-              inset: 0px;
-              background-repeat: repeat;
-              background-position: left top;
-              background-size: 52.8px;
-              background-image: url('https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg');
-              border: 0px;
-            "
-          ></div>
+            class="flex-none mix-blend-darken opacity-5 absolute inset-0"
+            data-framer-name="Texture"
+            name="Texture"
+          >
+            <div
+              data-framer-background-image-wrapper="true"
+              style="
+                position: absolute;
+                border-radius: inherit;
+                inset: 0px;
+                background-repeat: repeat;
+                background-position: left top;
+                background-size: 52.8px;
+                background-image: url('https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg');
+                border: 0px;
+              "
+            ></div>
+          </div>
         </div>
-      </div>
 
-      <div class="space-y-4 md:space-y-7">
-        <div class="font-medium space-y-12 md:space-y-3">
-          <img
-            class="w-60 md:w-60 mx-auto"
-            src="./logodarksq.png"
-            alt="logo"
-            data-aos="fade-up"
-          />
-          <!-- <h1
+        <div class="space-y-4 md:space-y-7">
+          <div class="font-medium space-y-12 md:space-y-3">
+            <img
+              class="w-60 md:w-60 mx-auto"
+              src="./logodarksq.png"
+              alt="logo"
+              data-aos="fade-up"
+            />
+            <!-- <h1
               class="text-5xl md:text-7xl text-primary font-bold"
               data-aos="fade-up"
             >
               Skin Beyond Borders
             </h1> -->
-          <h1
-            class="text-3xl md:text-5xl mb-12 md:mb-8"
+            <h1
+              class="text-3xl md:text-5xl mb-12 md:mb-8"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              "The Skincare Metaverse"
+            </h1>
+          </div>
+          <div
+            class="text-xl md:text-2xl font-medium"
             data-aos="fade-up"
-            data-aos-delay="100"
+            data-aos-delay="150"
           >
-            "The Skincare Metaverse"
-          </h1>
-        </div>
-        <div
-          class="text-xl md:text-2xl font-medium"
-          data-aos="fade-up"
-          data-aos-delay="150"
-        >
-          Shaping The Future Of The $180B Global Skincare Industry
-        </div>
+            Shaping The Future Of The $180B Global Skincare Industry
+          </div>
 
-        <!-- <button class="btn mx-auto w-auto md:mt-10" data-aos="fade-up">
+          <!-- <button class="btn mx-auto w-auto md:mt-10" data-aos="fade-up">
             Book a call demo
           </button> -->
-      </div>
+        </div>
 
-      <div
-        class="text-lg absolute bottom-10"
-        data-aos="fade-up"
-        data-aos-delay="200"
-        data-aos-offset="-100"
-      >
-        Series A Investment Deck | 2025
+        <div
+          class="text-lg absolute bottom-10"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-offset="-100"
+        >
+          Series A Investment Deck | 2025
+        </div>
       </div>
-      <!-- <div class="content relative mt-15" data-aos="fade-up">
-          <figure
-            class="md:aspect-[2.6666666666666665_/_1] flex-none h-[var(--framer-aspect-ratio-supported,432px)] overflow-hidden relative select-none w-full will-change-[var(--framer-will-change-override,transform)] rounded-2xl max-h-90"
-            style="will-change: transform; opacity: 1; transform: none"
-          >
-            <img
-              decoding="async"
-              src="./hero-img.avif"
-              alt="office image"
-              class="object-cover w-full h-full rounded-2xl"
-              draggable="false"
-            />
-          </figure>
-        </div> -->
     </div>
     <!-- </div> -->
 
     <!-- Slide 2: Imagine a World Where -->
+    <div class="home-section bg-purple-50">
+      <div
+        id="slide-2"
+        class="container min-h-[100dvh] flex flex-col items-center justify-center py-10 md:py-20 overflow-hidden max-w-6xl text-center mx-auto px-6"
+      >
+        <div>
+          <h2
+            class="sub-heading main-content pb-4"
+            data-aos="fade-up"
+            data-aos-id="slide-2-content"
+          >
+            Imagine a World Where...
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="home-section">
+      <div
+        id="slide-2"
+        class="container min-h-[100dvh] flex flex-col items-center justify-center py-10 md:py-20 overflow-hidden max-w-6xl text-center mx-auto px-6"
+      >
+        <div class="sub-content my-20" data-aos="fade-up">
+          <h2 class="sub-heading pb-4">Every skincare decision is</h2>
+          <h2 class="sub-heading pb-4">Informed,</h2>
+          <h2 class="sub-heading pb-4">Hyper-personalised &</h2>
+          <h2 class="sub-heading pb-4">Connected......</h2>
+        </div>
+      </div>
+    </div>
+    <div class="home-section bg-green-50">
+      <div
+        id="slide-2"
+        class="container min-h-[100dvh] flex flex-col items-center justify-center py-10 md:py-20 overflow-hidden max-w-6xl text-center mx-auto px-6"
+      >
+        <div class="sub-content" data-aos="fade-up">
+          <h2 class="sub-heading pb-4">We're building</h2>
+          <h2 class="sub-heading pb-4">The Skincare Metaverse</h2>
+          <h2 class="sub-heading pb-4">A Unified Digital Ecosystems</h2>
+          <h2 class="sub-heading pb-4 leading-15">
+            Connecting All Industry Stakeholders
+          </h2>
+        </div>
+      </div>
+    </div>
 
     <div class="home-section">
       <div
@@ -377,9 +441,9 @@
         class="container py-10 md:py-20 overflow-hidden max-w-6xl text-center mx-auto px-6"
       >
         <div
-          class="[&_div]:min-h-[50dvh] [&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:flex-col"
+          class="[&_div]:flex [&_div]:items-center [&_div]:justify-center [&_div]:flex-col"
         >
-          <div>
+          <!-- <div>
             <h2
               class="sub-heading main-content pb-4"
               data-aos="fade-up"
@@ -387,9 +451,9 @@
             >
               Imagine a World Where...
             </h2>
-          </div>
+          </div> -->
 
-          <div
+          <!-- <div
             class="sub-content my-20"
             data-aos="fade-up"
             data-aos-offset="350"
@@ -398,19 +462,19 @@
             <h2 class="sub-heading pb-4">Informed,</h2>
             <h2 class="sub-heading pb-4">Hyper-personalised &</h2>
             <h2 class="sub-heading pb-4">Connected......</h2>
-          </div>
+          </div> -->
 
-          <div class="sub-content" data-aos="fade-up" data-aos-offset="350">
+          <!-- <div class="sub-content" data-aos="fade-up" data-aos-offset="350">
             <h2 class="sub-heading pb-4">We're building</h2>
             <h2 class="sub-heading pb-4">The Skincare Metaverse</h2>
             <h2 class="sub-heading pb-4">A Unified Digital Ecosystems</h2>
             <h2 class="sub-heading pb-4 leading-15">
               Connecting All Industry Stakeholders
             </h2>
-          </div>
+          </div> -->
         </div>
         <div
-          class="mt-10 md:mt-15 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
+          class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"
           data-aos="fade-up"
           data-aos-offset="350"
         >
@@ -3365,7 +3429,9 @@
         </div>
       </div> -->
     </div>
-    <div class="bg-foreground text-lg text-muted text-center p-4">
+    <div
+      class="bg-foreground home-section !min-h-fit text-lg text-muted text-center p-4"
+    >
       <p>
         Contact: <span class="font-semibold">Raaj Naik</span> |
         <a class="underline text-blue-500" href="mailto:raaj.naik@skinbb.com"
@@ -3377,17 +3443,48 @@
         >
       </p>
     </div>
+  </body>
+  <script>
+    window.onload = function () {
+      if (localStorage.getItem("isLoggedIn") === "true") {
+        document.querySelector(".crediential-page").style.display = "none";
+        // document
+        //   .querySelectorAll(".home-section")
+        //   .forEach((el) => (el.style.display = "block"));
+        document.querySelector("body").style.overflow = "auto";
+      } else {
+        document.querySelector(".crediential-page").style.display = "block";
+        // document
+        //   .querySelectorAll(".home-section")
+        //   .forEach((el) => (el.style.display = "none"));
+        document.querySelector("body").style.overflow = "hidden";
+      }
+    };
+    // document.querySelector("body").style.overflow = "hidden";
 
-    <script>
-      AOS.init({
-        duration: 1000,
-        // once: true,
-        // once: true,
-        // easing: 'ease-in-out',
-      });
-    </script>
-    <script src="./index.js"></script>
-    <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+    function checkLogin() {
+      const code = document.getElementById("loginCode").value;
+      const correctCode = "12345678";
+
+      if (code === correctCode) {
+        localStorage.setItem("isLoggedIn", "true");
+        document.querySelector(".crediential-page").style.display = "none";
+        document.querySelector("body").style.overflow = "auto";
+      } else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      // once: true,
+      // once: true,
+      // easing: 'ease-in-out',
+    });
+  </script>
+  <script src="./index.js"></script>
+  <!-- <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
     <script type="module">
       // Import from a CDN. (You can pin a version by replacing @latest with @1.x.y)
       // import Lenis from "https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/dist/lenis.min.js";
@@ -3412,29 +3509,11 @@
       }
       requestAnimationFrame(raf);
 
-      // Optional: make in-page anchor links use Lenis scrolling
-      // const HEADER_OFFSET = 72; // matches --header-h above (px)
-      // document.querySelectorAll('a[href^="#"]').forEach((a) => {
-      //   a.addEventListener('click', (e) => {
-      //     const hash = a.getAttribute('href');
-      //     if (!hash || hash === '#') return;
-      //     const target = document.querySelector(hash);
-      //     if (!target) return;
-      //     e.preventDefault();
-      //     lenis.scrollTo(target, {
-      //       offset: -HEADER_OFFSET, // keep target below sticky header
-      //       // duration: 1.1,       // optionally customize
-      //       // easing: (t) => 1 - Math.pow(1 - t, 3)
-      //     });
-      //     // Keep the URL hash in sync (without jumping)
-      //     history.pushState(null, '', hash);
-      //   });
-      // });
+     
 
       // Example: listen to scroll events (velocity, progress, etc.)
       lenis.on("scroll", ({ scroll, limit, velocity, direction, progress }) => {
         console.log(scroll, velocity, progress);
       });
-    </script>
-  </body>
+    </script> -->
 </html>
