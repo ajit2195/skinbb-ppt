@@ -274,16 +274,16 @@
     </style>
 
     <style>
-      .crediential-page {
+      /* .crediential-page {
         display: block;
-      }
-      .home-section {
+      } */
+      /* .home-section { */
         /* display: none; */
-      }
+      /* } */
     </style>
   </head>
   <body class="home-page text-foreground overflow-x-hidden">
-    <div class="crediential-page fixed w-full h-full z-[9999] bg-white">
+    <!-- <div class="crediential-page fixed w-full h-full z-[9999] bg-white">
       <div class="min-h-[100dvh] flex items-center justify-center">
         <div class="space-y-5 shadow md:p-8 p-5 rounded-2xl">
           <div class="flex flex-col gap-2">
@@ -304,7 +304,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="progress-bar" id="progress"></div>
 
@@ -3492,23 +3492,16 @@
       </p>
     </div>
   </body>
-  <script>
+  <!-- <script>
     window.onload = function () {
       if (localStorage.getItem("isLoggedIn") === "true") {
         document.querySelector(".crediential-page").style.display = "none";
-        // document
-        //   .querySelectorAll(".home-section")
-        //   .forEach((el) => (el.style.display = "block"));
         document.querySelector("body").style.overflow = "auto";
       } else {
         document.querySelector(".crediential-page").style.display = "block";
-        // document
-        //   .querySelectorAll(".home-section")
-        //   .forEach((el) => (el.style.display = "none"));
         document.querySelector("body").style.overflow = "hidden";
       }
     };
-    // document.querySelector("body").style.overflow = "hidden";
 
     function checkLogin() {
       const code = document.getElementById("loginCode").value;
@@ -3523,7 +3516,8 @@
       }
     }
   </script>
-  <script>
+   -->
+   <script>
     AOS.init({
       duration: 1000,
       // once: true,
