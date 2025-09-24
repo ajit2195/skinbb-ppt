@@ -448,7 +448,7 @@
   </section>
   <!-- Slide 3:The heading -->
   <div class="home-section relative py-10 md:py-20  space-y-3 flex items-center justify-center">
-    <h2 class="sub-heading leading-15" data-aos="fade-up">We're building
+    <h2 class="sub-heading md:leading-15" data-aos="fade-up">We're building
       <br>A Unified Digital Ecosystem
       <br>Connecting All Industry Stakeholders
     </h2>
@@ -759,7 +759,7 @@
     </div>
   </div>
 
-  <div class="home-section container mx-auto px-6 flex flex-col items-center justify-center py-10 md:py-20">
+  <div class="home-section container overflow-hidden mx-auto px-6 flex flex-col items-center justify-center py-10 md:py-20">
     <div class="">
       <h2 class="sub-heading mb-4" data-aos="fade-up">
         SkinBB’s Suite Overview
@@ -768,15 +768,17 @@
         Comprehensive Feature Ecosystem
       </h2>
     </div>
-    <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="50">
-      <img class="h-80 mx-auto aspect-3/4 object-cover rounded-lg" src="./suit-overview-2.png" />
+   <div data-aos="fade-up" data-aos-delay="50">
+    <div class="flex flex-col sm:flex-row justify-center gap-4" >
+      <img class="max-w-40 md:max-w-full  md:h-80 mx-auto aspect-3/4 object-cover rounded-lg" src="./suit-overview-2.png" />
       <div class="flex min-w-sm flex-col sm:flex-row items-center justify-center text-xl gap-6 sm:col-span-2">
         <div class="">Knowledge Suite</div>
         <div class="w-20 h-1 sm:h-15 sm:w-1 rounded-full bg-primary"></div>
         <div class="">Tech Suite</div>
       </div>
-      <img class="h-80 mx-auto aspect-3/4 object-cover rounded-lg" src="./suit-overview-1.png" />
+      <img class="max-w-40 md:max-w-full  md:h-80 mx-auto aspect-3/4 object-cover rounded-lg" src="./suit-overview-1.png" />
     </div>
+   </div>
   </div>
 
   <section class="home-section bg-red-50 flex items-center justify-center">
@@ -786,7 +788,7 @@
           SkinBB <span class="text-foreground"> | Knowledge Suite</span>
         </h2>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-10" data-aos="fade-up">
+      <div class="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-4 gap-8 mt-10" data-aos="fade-up">
         <!-- RXFX Show -->
         <div class="flex items-center gap-4">
           <span class="text-primary">
@@ -1448,7 +1450,7 @@
       </div>
 
       <div class="flex justify-center items-start h-fit md:sticky md:top-10" data-aos="fade-up" data-aos-delay="50">
-        <img src="./environmental-hl-hp.png" class="max-w-100" alt="Knowledge Suite Video" />
+        <img src="./environmental-hl-hp.png" class="max-w-full md:max-w-100" alt="Knowledge Suite Video" />
       </div>
     </div>
   </section>
@@ -1652,7 +1654,7 @@
     </div>
   </section>
 
-  <section class="home-section container mx-auto max-w-6xl px-6 pt-10 md:pt-15 relative">
+  <section class="home-section !min-h-auto md:!min-h-[100dvh]  container mx-auto max-w-6xl px-6 py-10 md:py-15 relative">
     <div>
       <h2 class="sub-heading w-full text-center mb-15" data-aos="fade-up">
         B2B: Brand & Supplier Platform
@@ -2737,7 +2739,7 @@
       <h2 class="text-xl text-center md:mb-10 mb-10 font-semibold" data-aos="fade-up" data-aos-delay="50">FY30 Revenue:
         $ 0.5Mn</h2>
 
-      <div class="flex justify-center gap-6 mb-8" data-aos="fade-up">
+      <div class="flex flex-wrap justify-center gap-6 mb-8" data-aos="fade-up">
         <div class=" feature-card not-hover flex items-center justify-center flex-col">
           <div class=" text-2xl font-medium mb-1">Pay-As-You-Go</div>
           <div class="  text-2xl font-semibold mb-1">PREPAY</div>
@@ -2868,7 +2870,7 @@
     <section
     class="home-section container mx-auto px-6 py-10 md:py-5 max-w-5xl flex flex-col justify-center items-center">
     <div class="grid grid-col-1 md:grid-cols-5 gap-6 items-center">
-      <div class="flex flex-col items-center justify-start gap-3 mb-8  md:col-span-3">
+      <div class="flex flex-col items-center justify-start gap-3 md:mb-8  md:col-span-3">
         <h2 class="sub-heading w-full !text-left" data-aos="fade-up">
           Product Roadmap
         </h2>
@@ -2917,8 +2919,8 @@
         </div>
       </div>
 
-      <div class="flex justify-center md:col-span-2" data-aos="fade-up" data-aos-delay="50">
-        <img src="./product-roadmap.png" class="max-w-full h-[550px] rounded-lg" alt="Knowledge Suite Video" />
+      <div class="flex justify-start md:justify-center md:col-span-2" data-aos="fade-up" data-aos-delay="50">
+        <img src="./product-roadmap.png" class="max-w-full md:h-[550px] h-[300px] rounded-lg" alt="Knowledge Suite Video" />
       </div>
     </div>
   </section>
@@ -2930,21 +2932,21 @@
   </div>
   <!-- Leadership Team - Ajit Marathe -->
   <section class="home-section pt-10 md:pt-20 bg-gradient-to-br from-teal-50 to-cyan-50">
-    <div class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20">
+    <div class="container max-w-6xl mx-auto px-6 pb-10 md:pb-20">
       <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up" data-aos-delay="100">
         <!-- Text Content -->
-        <div class="text-foreground">
+        <div class="order-2 md:order-1">
           <h3 class="sub-heading !text-left mb-4">Ajit Marathe</h3>
-          <p class="text-xl text-purple-600 mb-6 font-semibold">Founder, SkinBB | Founder, Adroit Biomed Ltd.</p>
-          <p class="text-lg leading-relaxed text-muted-foreground">
+          <p class="text-lg md:text-xl text-purple-600 mb-2 md:mb-6 font-semibold">Founder, SkinBB | Founder, Adroit Biomed Ltd.</p>
+          <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
             With over 15 years of expertise in dermatology, pharmaceutical sciences, and formulation innovation, Ajit Marathe envisioned SkinBB as a "skincare confluence" where science, consumer behavior, and intelligent technologies intersect. A rare blend of a formulation expert and tech enthusiast, Ajit brings deep proficiency in global liaisoning with industry stakeholders, concept development, product development along with a sharp eye for e-commerce analytics and digital health trends. His leadership was pivotal in scaling Adroit Biomed into a pan-India dermatology powerhouse, reaching 8,500+ dermatologists-a clear reflection of his vision, execution, and data-driven strategy.
           </p>
         </div>
         
         <!-- Image -->
-        <div class="flex justify-center">
-          <div class="w-100 h-100 p-4">
-            <img src="./Ajit Sir.png" alt="Ajit Marathe" class="w-full h-full object-contain">
+        <div class="flex justify-start md:justify-center order-1 md:order-2">
+          <div class="">
+            <img src="./Ajit Sir.png" alt="Ajit Marathe" class="max-w-40 h-full md:max-w-80 object-contain">
           </div>
         </div>
       </div>
@@ -2955,18 +2957,19 @@
   <section class="home-section pt-10 md:pt-20 bg-gradient-to-br from-indigo-50 to-purple-50">
     <div class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20">
       <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up" data-aos-delay="100">
-        <!-- Image -->
-        <div class="flex justify-center">
-          <div class="w-100 h-100  p-4">
-            <img src="./Pravin sir.png" alt="Dr. Pravin Banodkar" class="w-full h-full object-contain">
+      
+
+        <div class="flex justify-start md:justify-center">
+          <div class="">
+            <img src="./Pravin sir.png"  alt="Dr. Pravin Banodkar" class="max-w-40 h-full md:max-w-80 object-contain">
           </div>
         </div>
         
         <!-- Text Content -->
         <div class="text-foreground">
           <h3 class="sub-heading !text-left font-bold mb-4">Dr. Pravin Banodkar</h3>
-          <p class="text-xl text-blue-600 mb-6 font-semibold">Co-Founder, SkinBB | Director, Skin Crest Clinic</p>
-          <p class="text-lg leading-relaxed text-muted-foreground">
+          <p class="text-lg md:text-xl text-blue-600 mb-2 md:mb-6 font-semibold">Co-Founder, SkinBB | Director, Skin Crest Clinic</p>
+          <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
             Dr. Pravin Banodkar is a renowned Mumbai-based dermatologist with specialized expertise in medical, cosmetic, and pediatric dermatology. Internationally trained-with a prestigious diploma from the Royal College of Physicians (Glasgow)-he is widely respected for blending hands-on clinical acumen with academic excellence. A trusted voice in dermatology, Dr. Banodkar has authored several textbook chapters, contributed to leading scientific publications, and serves as a peer reviewer for reputed dermatology journals. His commitment: to advancing evidence-based skin science makes him a key opinion leader in both clinical practice and medical education.
           </p>
         </div>
@@ -2979,18 +2982,18 @@
     <div class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20">
       <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up" data-aos-delay="100">
         <!-- Text Content -->
-        <div class="text-foreground">
+        <div class="text-foreground order-2 md:order-1">
           <h3 class="sub-heading !text-left font-bold mb-4">Dr. Soma Sarkar</h3>
-          <p class="text-xl text-green-600 mb-6 font-semibold">Co-Founder, SkinBB | Founder, Savoir Wellness Clinic</p>
-          <p class="text-lg leading-relaxed text-muted-foreground">
+          <p class="text-lg md:text-xl text-green-600 mb-2 md:mb-6 font-semibold">Co-Founder, SkinBB | Founder, Savoir Wellness Clinic</p>
+          <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
             She is a seasoned, internationally trained aesthetic dermatologist and educator based in Mumbai, with over 17 years of experience in advanced medical and aesthetic dermatology. Renowned for her clinical excellence and commitment to education, she has mentored the next generation of skincare professionals while shaping cutting-edge treatment protocols. Her work has been widely recognized in top beauty and fashion publications including Vogue, Femina, and Grazia, solidifying her reputation as both a scientific and style-forward thought leader in the field.
           </p>
         </div>
-        
+
         <!-- Image -->
-        <div class="flex justify-center">
-          <div class="w-100 h-100 p-4">
-            <img src="./Soma Ma'am.png" alt="Dr. Soma Sarkar" class="w-full h-full object-contain">
+        <div class="flex justify-start md:justify-center  order-1 md:order-2">
+          <div class="">
+            <img src="./Soma Ma'am.png" alt="Dr. Soma Sarkar" class="max-w-40 h-full md:max-w-80 object-contain">
           </div>
         </div>
       </div>
@@ -3002,17 +3005,17 @@
     <div class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20">
       <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up" data-aos-delay="100">
         <!-- Image -->
-        <div class="flex justify-center">
-          <div class="w-100 h-100 p-4">
-            <img src="./Supriya Ma'am.png" alt="Supriya Marathe" class="w-full h-full object-contain">
+        <div class="flex  justify-start md:justify-center ">
+          <div class="">
+            <img src="./Supriya Ma'am.png" alt="Supriya Marathe" class="max-w-40 h-full md:max-w-80 object-contain">
           </div>
         </div>
         
         <!-- Text Content -->
         <div class="text-foreground">
           <h3 class="sub-heading !text-left font-bold mb-4">Supriya Marathe</h3>
-          <p class="text-xl text-orange-600 mb-6 font-semibold">Co-Founder, SkinBB</p>
-          <p class="text-lg leading-relaxed text-muted-foreground">
+          <p class="text-lg md:text-xl text-orange-600 mb-2 md:mb-6 font-semibold">Co-Founder, SkinBB</p>
+          <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
             Supriya Marathe is a dynamic healthcare strategist with a proven track record in launching first-of-its-kind products, driving brand differentiation, and shaping market-leading narratives. With deep domain expertise across oncology, cardiology, diabetes, and dermatology, she combines scientific rigor with creative brand building, backed by a strong network of KOLs and clinical experts. Her proficiency spans e-commerce strategy, website management, and high-impact digital storytelling-enabling her to craft data-driven, visually compelling experiences that resonate with both consumers and professionals alike.
           </p>
         </div>
@@ -3025,17 +3028,17 @@
     <div class="container overflow-hidden max-w-6xl mx-auto px-6 pb-10 md:pb-20">
       <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-up" data-aos-delay="100">
         <!-- Text Content -->
-        <div class="text-foreground">
+        <div class="text-foreground order-2 md:order-1">
           <h3 class="sub-heading !text-left font-bold mb-4">Raaj Naik</h3>
-          <p class="text-xl text-red-600 mb-6 font-semibold">Director - Growth and Strategy, SkinBB</p>
-          <p class="text-lg leading-relaxed text-muted-foreground">
+          <p class="text-lg md:text-xl text-red-600 mb-2 md:mb-6 font-semibold">Director - Growth and Strategy, SkinBB</p>
+          <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
             Raaj Naik is the Director – Strategy & Growth at SkinBB, where he spearheads business expansion and strategic initiatives. With over 12 years of rich experience in the healthcare domain, he has worked extensively across both Indian and international markets. Raaj began has been a finance professional and his career spans working with an India-centric private equity fund. At SkinBB, he leverages his deep expertise in finance, strategy, and investments to accelerate growth and innovation. He brings a unique blend of financial acumen and healthcare sector insights, making him instrumental in shaping SkinBB's vision.
           </p>
         </div>
         
         <!-- Image -->
-        <div class="flex justify-center">
-          <div class="w-100 h-100 p-4">
+        <div class="flex justify-start md:justify-center order-1 md:order-2">
+          <div class="w-60 h-60 md:w-100 md:h-100 p-4">
             <div class="w-full h-full bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center">
               <span class="text-6xl font-bold text-white">RN</span>
             </div>
@@ -3937,7 +3940,7 @@
   <section
     class="home-section container mx-auto px-6 py-10 md:py-5 max-w-5xl flex flex-col justify-center items-center">
     <div class="grid grid-col-1 md:grid-cols-5 gap-6 items-center">
-      <div class="flex flex-col items-center justify-start gap-3 mb-8  md:col-span-3">
+      <div class="flex flex-col items-center justify-start gap-3 md:mb-8  md:col-span-3">
         <h2 class="sub-heading w-full !text-left" data-aos="fade-up">
           The Vision
         </h2>
@@ -3995,8 +3998,8 @@
 
       </div>
 
-      <div class="flex justify-center md:col-span-2" data-aos="fade-up" data-aos-delay="50">
-        <img src="./vision.png" class="max-w-full h-[550px] rounded-lg" alt="Knowledge Suite Video" />
+      <div class="flex justify-start md:justify-center md:col-span-2" data-aos="fade-up" data-aos-delay="50">
+        <img src="./vision.png" class="max-w-full md:h-[550px] h-[300px] rounded-lg" alt="Knowledge Suite Video" />
       </div>
     </div>
   </section>
